@@ -1,0 +1,223 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\nonstopmode
+\documentclass[12pt,fleqn]{book} % Default font size and left-justified equations
+\renewcommand*{\rmdefault}{Roboto}
+%----------------------------------------------------------------------------------------
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+%\pagestyle{fancy}
+
+
+\begin{document}	
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+~\\
+\begin{figure}
+ \centering
+	\itshape
+	\includegraphics[width=15cm,height=5cm]{logos.png}
+\end{figure}
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \coordinate [below=12cm] (midpoint) at (current page.north);
+  \node at (current page.north west)
+  {\begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north west,inner sep=0pt] at (0,-12){ \resizebox{!}{13.5cm}{\includegraphics[width=\paperwidth]{fond_ecran_svom.jpg}}}; % Background image
+      \draw[anchor=north] (midpoint) node [fill=ocre!15!white,fill opacity=0.4,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\Huge\centering \textsf{Rapport de stage de fin d'études} \\[0pt] % Book title
+      {\Large Service Sédi du département de l'Irfu au CEA de Saclay}\\[20pt] 
+      {\Huge Optimisation et Automatisation d'une chaîne de réception radio VHF}}}; 
+  \end{tikzpicture}};
+\end{tikzpicture}
+
+\title{}
+\author{\bsc{Rodolphe} - \bsc{Jeunehomme}}
+
+\vfill
+
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent \textsc{Rédigé par Rodolphe Jeunehomme}\\ % Publisher
+\noindent \textsc{~\\Sous la direction de Jean-Paul Le Fèvre et Bertrand Cordier}\\ % Publisher
+\noindent \textsc{Conseiller d'études - Mme Charlotte Langlais}\\
+
+\noindent \textit{Télécom-Bretagne, Stage de fin d'études Mai-Octobre 2016} % Printing/edition date
+
+
+
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+\pagestyle{fancy} % Print headers again
+\setcounter{part}{-1}
+\part{Résumé - Executive summary}
+\subsubsection{Français}
+~\\\indent Ce rapport de stage a pour objectif de décrire mes travaux effectués durant la période de Mai à Octobre 2016 au sein du service Sédi (Service d'électronique des détecteurs et de l'informatique) du département de l'Irfu (Institut de recherche sur les lois fondamentales de l'univers) du CEA (Commissariat de l'énergie atomique et des énergies alternatives) de Saclay.
+~\\\\Une chaîne de réception radio basée sur une antenne quadrifilaire à hélices a été prototypée dans la période précédant mon stage sur le toit du bâtiment du service Sédi dans le cadre de la mission spatiale \emph{Svom} pour la réception des messages d'alertes émis par le satellite \emph{Svom} en bande VHF lors de la détection de sursauts gamma dans l'univers. 
+~\\\\Les objectifs principaux de ce stage sont les tests et l'optimisation de cette chaîne de réception radio. Les tests ont été effectués à partir des données transmises par le satellite météo NOAA-19 qui émet à une fréquence proche de 137 MHz que celle qu'utilisera le satellite Svom pour transmettre ses données vers la Terre.
+~\\\\Un deuxième prototype de chaîne de réception radio utilisant un autre type d'antenne, l'antenne Turnstile, a été installé à côté de la première antenne durant ce stage afin de comparer les performances des deux antennes. 
+~\\\\Un autre prototype de récepteur SDR (Software Defined Radio), le récepteur AIRSPY-R2, a également été inclu à la chaîne de réception radio afin de comparer les performances avec celui initialement installé sur la chaîne, le récepteur SDR DX-PATROL.
+~\\\\Un programme permettant d'analyser par transformées de Fourier les images APTs transmises par le satellite NOAA-19 a été développé afin de comparer statistiquement les performances des deux antennes.
+~\\\\Un programme d'automatisation de la chaîne de réception radio, utilisant l'architecture REST (server-client), a également été dévelopé et a représenté la plus grande partie de ce stage afin de constituer une base de données d'images APTs reçues par le satellite NOAA-19 et de pouvoir établir des statistiques sur la qualité des images reçues en fonction du type d'antenne ou du type de récepteur SDR utilisé. 
+~\\\\Une base de données a également été créée afin de sauvegarder les caractéristiques des passages du satellite NOAA-19 au moment de l'acquisition des données par le prototype de chaîne de réception radio. Cette base de données est relié à l'automatisation de la chaîne de réception radio en mémorisant les horaires des passages du satellite NOAA-19 et permettra à l'utilisateur de pouvoir établir plus facilement une corrélation entre la réception d'un signal de mauvaise qualité et les caractéristiques du passage du satellite NOAA-19 lors de la transmission d'un tel signal. 
+~\\\\\\
+\subsubsection{English}
+~\\\indent This internship report aims to describe my work done during the period from May to October 2016 within the service Sedi (Electronic detectors and Informatic Service) of the department of IRFU (Institute of research about fundamental laws of the universe) in the CEA (Research center about Atomic energy and alternative energies) in Saclay.
+~\\\\A radio receiver system based on the use of a quadrifilar helix antenna was prototyped in the period before the beginning of my internship and was installed on the roof of the building of the Sedi service for the space mission \emph{SVOM} in order to receive alert messages from the \emph{Svom} satellite in the frequency band VHF during the detection of gamma-ray bursts in the universe by scientific instruments embedded in the satellite.
+~\\\\The main objectives of this internship were testing and optimizing this radio receiver chain. Tests were performed using data provided by the NOAA-19 weather satellite that transmits on the same frequency of 137 MHz, the same frequency that will be used by SVOM to transmit its data to Earth.
+~\\\\A second prototype of radio receiver chain using another type of antenna, the Turnstile antenna, was installed next to the first antenna during this internship to compare the performance of the two antennas.
+~\\\\Another prototype receiver SDR (Software Defined Radio), the \emph{AIRSPY-R2} receptor, was also included in the radio receiver chain to compare the performance with the one originally installed on the channel, the receiver SDR DX -PATROL.
+~\\\\A program to analyze with Fourier transforms the APTs images from the NOAA-19 satellite was developed to statistically compare the performance of the two antennas in function of the caracteristics of the satellite NOAA-19 passes.
+~ \\\\An automation radio reception chain program, using the REST architecture (server-client), was also developped, to provide a database of APTs images received by the NOAA-19 satellite and to establish statistics on the quality of the images received by the two different type of antenna or by the two type of SDR receiver.
+~ \\\\A database has also been created to save passes features of the NOAA-19 satellite at the time of the acquisition of the data by the radio receiver chain prototype. This database is linked to the automation program of the radio reception chain by saving the next passes hours of the NOAA-19 satellite and will also allow the user to establish more easily a correlation between the reception of a poor signal quality and the characteristics of NOAA-19 satellite passes during the transmission of such a signal (elevation of the satellite, etc.).
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{back8} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\pagestyle{fancy}
+\part{Introduction}
+
+\setcounter{chapter}{1}
+\section{La technologie Spintronic}
+
+\section{Le matériau magnétique Yttrium Iron Garnet}
+
+\part{Le filtre configurable en fréquences}
+Le filtre configurable est constitué d’un résonateur électrique et d’une
+structure hybride à base d’un matériau magnétique isolant électriquement, l’Yttrium
+Iron Garnet (YIG) et d’un métal normal, le platine (Pt). L’application d’un champ
+magnétique statique sur le dispostif permettra de changer les propriétés résonantes du
+filtre.
+~\\\\La figure~\underline{\color{blue}\ref{filtre}} ci-dessous illustre le principe de fonctionnement du filtre configurable ainsi que ses différents composants.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=9cm]{filtre_configurable.png}
+	\caption{\label{filtre} \underline{Filtre configurable}}
+\end{figure}
+\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{filtre}} | Filtre configurable. a}, Les paramètres S11 et S21 du résonateur électrique\footnote{ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator\slash YIG thin film configuration}} autour de 5 GHz. \textbf{b}, La courbe quadratique \footnote{LETTERS, Nature, \emph{Transmission of electrical signals by spin wave}} illustrant la dépendance magnétique H de résonance magnétique du YIG à une fréquence fo donnée. \textbf{c}, Résultat du couplage entre les résonateurs magnétique et électrique\footnotemark[2]. La courbe S21 en bleu illustre la fréquence Fo à laquelle le filtre résonne à champ magnétique nul. La courbe en rouge correspond au nouveau paramètre de transmission S21 du filtre à la condition de résonance magnétique du YIG. 
+~\\\\
+\normalsize Ce dispositif novateur sera à même de communiquer son état de fonctionnement par le
+biais de phénomènes physiques complexes qui se traduisent en bout de chaîne par une simple tension
+DC.~\\\\
+
+\chapter{Etude des résonateurs \emph{Elliptika}} 
+~\\\\Plusieurs types de résonateurs électriques ont été conçus par l'entreprise brestoise \emph{Elliptika}, spécialisée dans la conception de circuits RF et hyperfréquences. Ces résonateurs électriques ont pour rôle de constituer la base du filtre configurable.
+~\\\\La figure~\underline{\color{blue}\ref{resonateurs}} ci-dessous illustre différentes formes de résonateurs conçues par \emph{Elliptika}.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=12cm,height=4cm]{resonateurs.png}
+	\caption{\label{resonateurs} \underline{Résonateurs Elliptika}}
+\end{figure}
+\section{Les résonateurs de type \emph{Openloop}}
+~\\\indent Plusieurs types de résonateurs \emph{Openloop} ont été réalisés. Un résonateur Openloop est caractérisé par son Gap (distance séparant les deux brins de la boucle). 
+~\\\\A partir de résonateurs Openloop simples, différents modèles de résonateurs plus complexes et constitués de plusieurs résonateurs Openloop ont été réalisés. 
+~\\
+\subsubsection{Le résonateur Openloop res04\_3GHz}
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=3cm,height=4cm]{op_res04_3G.png}
+	\caption{\label{op_res04_3G} \underline{Openloop res04\_3GHz}}
+\end{figure}
+\noindent 
+
+~\\\\
+\chapter{Etude du couplage de résonnance électrique et magnétique}
+Le résonateur électrique utilisé pour les mesures est le résonateur à simple STUB présenté dans le chapitre précédent. Un matériau magnétique (YIG), sur lequel a été déposé par pulvérisation cathodique une fine couche de platine (Pt), est positionné sur le court-circuit du résonateur électrique et donc à la position du maximum de champs magnétique émis par le résonateur à simple STUB. Un champs magnétique statique est appliqué sur le dipositif afin de faire résonner magnétiquement le YIG et donc de pouvoir étudier le couplage des résonances électrique et magnétique.
+\section{Le banc de mesures utilisé}
+~\\\indent La photographie~\underline{\color{blue}\ref{banc}} ci-dessous illustre le banc de mesure utilisé. Ce banc de mesures est installé au département micro-ondes de Télécom-Bretagne.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=12cm,height=7cm]{banc.png}
+	\caption{\label{banc} \underline{Banc de mesures-1, laboratoire Spintronic}}
+\end{figure}
+\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{banc}} | Banc de mesures-1. a}, un poste de travail \emph{Windows} et le logiciel \emph{LabView} afin de récolter automatiquement les données des différents instruments de mesures utilisés. \textbf{b}, un générateur de fréquences (9KHz-20GHz) \emph{KEYSIGHT}. \textbf{c}, un générateur de courant/tension \emph{KIKUSUI} pour générer le champs magnétique statique créé par les bobines (f). \textbf{d}, un Gaussmètre \emph{LakeShore} pour mesurer le champs magnétique satique créé par l'injection d'un courant dans les bobines (f). \textbf{e}, un générateur et détecteur de courant/tension \emph{KEITHLEY} pour générer un courant I dans le platine ou détecter une tension DC dans le platine. \textbf{f}, deux bobines servant à générer le champs magnétique statique et entre lesquelles est positionné le filtre. \textbf{g}, un analyseur de réseau pour l'étude des paramètres S du filtre.  
+~\\\\
+\normalsize La photographie~\underline{\color{blue}\ref{filtrebanc}} illustre le positionnement du filtre entre les deux bobines ainsi que le positionnement de l'association YIG/Pt sur le résonateur électrique:
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=12cm,height=7cm]{filtrebanc.png}
+	\caption{\label{filtrebanc} \underline{Banc de mesures-2, laboratoire Spintronic}}
+\end{figure}
+\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{filtrebanc}} | Banc de mesures-2. a}, le résonateur électrique à simple STUB. \textbf{b}, l'association YIG/PT à la position de court-circuit du résonateur électrique.
+~\\\\
+\normalsize Le filtre situé entre les deux bobines est le prototype de filtre configurable nous servant de test à l'étude du couplage de résonance électrique et magnétique. L'association YIG/Pt est positionné sur le court-circuit du résonateur électrique à l'aide de laque d'argent afin de le fixer et de pouvoir conduire le courant entre les fils reliés au générateur de courant/tension \emph{KEITHLEY} et le platine.
+\section{Mesure de la résonance électrique du filtre à simple STUB}
+~\\\indent Le filtre à simple STUB utilisé est un filtre coupe-bande. La figure~\underline{\color{blue}\ref{fo}} ci-dessous réprésente le paramètre S21 de transmission du filtre avec l'association YIG/Pt à champs magnétique nul.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{f0.png}
+	\caption{\label{fo} \underline{Résonance électrique}}
+\end{figure}
+\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{fo}} | Résonance électrique.} Le paramètre \emph{fo} correspond à la fréquence à laquelle le filtre coupe-bande à simple STUB ne laisse plus passer le signal.
+~\\\\
+\normalsize Afin d'étudier la reproductibilité du dispositif et de déterminer une incertitude sur la valeur du paramètre de résonance \emph{fo}, plusieurs mesures du paramètres S21 du filtre avec l'association YIG/Pt ont été effectuées après avoir réinstallé plusieurs fois le dispositif entre les bobines. 
+La figure~\underline{\color{blue}\ref{foreprod}} ci-dessous, illustre l'incertitude de mesures sur la résonance électrique du dispositif.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{f0reprod.png}
+	\caption{\label{foreprod} \underline{Résonance électrique - Repoductibilité des mesures}}
+\end{figure}
+\noindent L'incertitude sur la valeur du paramètre de transmission \emph{S21} est plus élevé lorsque celui-ci est proche de 0. L'incertitude trouvée sur \emph{S21} à la fréquence \emph{fo} est d'environ 15 MHz.
+\section{La résonance magnétique de l'Yttrium Iron Garnet}
+~\\\indent L'Yttrium Iron Garnet ou YIG entre en résonance magnétique sous l'effet d'un de l'application d'un champs magnétique H statique. La figure~\underline{\color{blue}\ref{resomag}} ci-dessous illustre la courbe théorique de résonance magnétique du YIG\footnote{ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator/YIG thin film configura-
+tion}} en fonction du champs magnétique qui lui est appliqué.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=8cm,height=5cm]{resomag.png}
+	\caption{\label{resomag} \underline{Résonance magnétique du YIG}}
+\end{figure}
+La courbe de résonance magnétique du YIG est d'allure quadratique et permet de déterminer la valeur \emph{Hres} du champs magnétique à appliquer à la fréquence de résonance électrique \emph{fo} du filtre pour faire résonner le YIG. 
+\section{Le couplage de résonance électrique et magnétique}
+\subsection{Mise en évidence du couplage de résonance}
+\indent Afin de mettre en évidence le couplage de résonance, un balayage en champs magnétique à la fréquence \emph{fo} de résonance électrique du filtre (résonateur électrique + association YIG/PT).
+
+\part{Conclusions}
+
+\setcounter{part}{-5}
+\part{Annexes}
+
+\setcounter{part}{-6}
+\part{Bibliographie}
+\label{Sources}
+\appendix
+\begin{description}
+ \item[$\bullet$] ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator/YIG thin film configuration}
+ \item[$\bullet$] LETTERS, Nature, \emph{Transmission of electrical signals by spin wave}
+\end{description}
+
+\setcounter{part}{-7}
+\part{Glossaire}
+\begin{description}
+ \item[$\bullet$] YIG: Yittrium Iron Garnet
+ \item[$\bullet$] Pt: Platine
+\end{description}
+
+
+\end{document}
