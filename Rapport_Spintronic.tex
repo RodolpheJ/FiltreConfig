@@ -87,18 +87,19 @@ structure hybride à base d’un matériau magnétique isolant électriquement, 
 Iron Garnet (YIG) et d’un métal normal, le platine (Pt). L’application d’un champ
 magnétique statique sur le dispostif permettra de changer les propriétés résonantes du
 filtre.
-~\\\\La figure~\underline{\color{blue}\ref{filtre}} ci-dessous illustre le principe de fonctionnement du filtre configurable ainsi que ses différents composants.
+~\\\\La figure~\underline{\color{blue}\ref{filtre}} ci-dessous illustre le principe de fonctionnement théorique du filtre configurable ainsi que ses différents composants.
 \begin{figure}[H]
 	\centering
 	\itshape
 	\includegraphics[width=15cm,height=9cm]{filtre_configurable.png}
 	\caption{\label{filtre} \underline{Filtre configurable}}
 \end{figure}
-\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{filtre}} | Filtre configurable. a}, Les paramètres S11 et \emph{S21} du résonateur électrique\footnote{ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator\slash YIG thin film configuration}} autour de 5 GHz. \textbf{b}, La courbe quadratique \footnote{LETTERS, Nature, \emph{Transmission of electrical signals by spin wave}} illustrant la dépendance magnétique H de résonance magnétique du YIG à une fréquence \emph{f0} donnée. \textbf{c}, Résultat du couplage entre les résonateurs magnétique et électrique\footnotemark[2]. La courbe \emph{\emph{S21}} en bleu illustre la fréquence Fo à laquelle le filtre résonne à champ magnétique nul. La courbe en rouge correspond au nouveau paramètre de transmission \emph{S21} du filtre à la condition de résonance magnétique du YIG. 
+\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{filtre}} | Filtre configurable. a}, Les paramètres \emph{S11} et \emph{S21} du résonateur électrique\footnote{ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator\slash YIG thin film configuration}} autour de 5 GHz. \textbf{b}, La courbe quadratique \footnote{LETTERS, Nature, \emph{Transmission of electrical signals by spin wave}} illustrant la dépendance magnétique H de résonance magnétique du YIG à une fréquence \emph{f0} donnée. \textbf{c}, Résultat du couplage entre les résonateurs magnétique et électrique\footnotemark[2]. La courbe \emph{S21} en bleu illustre la fréquence \emph{f0} à laquelle le filtre résonne à champ magnétique nul. La courbe en rouge correspond au nouveau paramètre de transmission \emph{S21} du filtre à la condition de résonance magnétique du YIG. 
 ~\\\\
 \normalsize Ce dispositif novateur sera à même de communiquer son état de fonctionnement par le
 biais de phénomènes physiques complexes qui se traduisent en bout de chaîne par une simple tension
-DC.~\\\\
+DC.
+~\\\\Le but de cette partie est d'étudier par la mesure le \emph{couplage des résonances magnétique et électrique} dans le filtre afin de pouvoir identifier les modèles théoriques physiques permettant de pouvoir contrôler et prévoir la configurabilité du filtre en fonction d'un champs magnétique statique appliqué ou d'un courant injecté dans le platine.
 
 \setcounter{chapter}{0}
 \chapter{Etude des résonateurs \emph{Elliptika}} 
@@ -197,8 +198,11 @@ La présence d'irrégularités le long des pentes des courbes des pics de réson
 	\includegraphics[width=15cm,height=10cm]{matH.png}
 	\caption{\label{matH} \underline{Paramètre S21 - Balayage en champs magnétique et en fréquences}}
 \end{figure}
-\noindent Le paramètre S21 est ici représenté par un code couleur. Il varie du rouge foncé pour 0 dB au bleu foncé pour -12 dB (c'est à dire lorsque le signal ne passe plus). Les conditions de résonance maximum du filtre correspondent aux coordonnées des zones du graphe ou la couleur est proche du bleu foncé. 
-On observe ainsi l'apparition d'une bande de résonance interdite.
+\noindent\footnotesize\textbf{Figure~\underline{\color{blue}\ref{matH}} | Balayage en champs et en fréquences. Courbes roses}, les courbes des minimums locaux du paramètre de transmission \emph{S21} aux alentours des fréquences \emph{f1} et \emph{f2} auxquelles se superposent les courbes de \emph{f1} et \emph{f2} du molède de couplage harmonique pour une valeur de coefficient de couplage $k\ \text{=}\ 0.1504$ et d'aimentation du YIG à saturation $Ms\ \text{=}\ 1750\ A.m^{-1}$. \textbf{Segment AB}, la valeur du \emph{gap} de fréquences pour une valeur de champs injecté dans le platine $H\ \text{=}\ Hres\ \text{=}\ 995.92\ 0e$. \textbf{Courbe noire horizontale}, la fréquence de résonance \emph{f0} du filtre à champs nul.
+~\\\\
+\normalsize
+\noindent Le paramètre S21 est ici représenté par un code couleur. Il varie du rouge foncé pour 0 dB au bleu foncé pour -12 dB (c'est à dire lorsque le signal ne passe plus). Les conditions de résonance maximum du filtre correspondent aux coordonnées des zones du graphe ou la couleur est proche du bleu foncé.
+~\\La position en fréquence des résonances \emph{f1} et \emph{f2} varie en fonction de la valeur du champs magnétique injecté dans le YIG. On observe ainsi l'apparition d'une bande de résonance interdite.
 \subsection{Utilisation du modèle de couplage harmonique}
 \noindent Le modèle de couplage harmonique\footnote{Arxiv, \emph{Study of the cavity-magnon-polariton transmission line shape}.} entre les résonances électrique et magnétique est utilisé dans le but de déterminer les fomules analytiques qui permettront de décrire le comportement de la variation des fréquences de résonances \emph{f1} et \emph{f2} en fonction du champs magnétique statique appliqué sur le filtre. 
 ~\\Ce modèle s'appuie sur les formules analytiques suivantes :
@@ -226,7 +230,7 @@ La courbe noire horizontale sur cette même figure représente la résonance \em
 \noindent Les courbes se croisent au point d'abscisse $ Hres\simeq995.92\ Oe$. Lorsque le champs magnétique appliqué est voisin de \emph{Hres}, l'écart des fréquences de résonannces \emph{f1} et \emph{f2} avec la fréquence fondamentale \emph{f0} se comporte de manière non-linéaire en fonction du champs magnétique appliqué.
 De plus, la position du point d'abscisse \emph{Hres} correspond à un \emph{gap} de $ \underset{gap}{f}\simeq634\ MHz$. Le \emph{gap} à \emph{H=Hres} à une valeur plus proche de celle du minimum de $\underset{2}{f}-\underset{1}{f}$ que de celle de son maximum. 
 ~\\Le segment noir et verticale \emph{AB} sur la figure~\underline{\color{blue}\ref{matH}} illustre la position du \emph{gap} à \emph{H=Hres} ainsi que son écartement.
-~\\\\La figure~\underline{\color{blue}\ref{hres_cf}} suivante illuste la valeur du paramètre \emph{S21} en dB à \emph{H=0 Oe} et à \emph{H=Hres}:
+~\\\\La figure~\underline{\color{blue}\ref{hres_cf}} suivante illuste la valeur du paramètre \emph{S21} mesuré en dB à \emph{H=0 Oe} et à \emph{H=Hres}:
 \begin{figure}[H]
 	\centering
 	\itshape
@@ -234,16 +238,28 @@ De plus, la position du point d'abscisse \emph{Hres} correspond à un \emph{gap}
 	\caption{\label{hres_cf} \underline{Hybridation de la résonance à H=Hres}}
 \end{figure}
 \noindent Pour une valeur de champs appliqué \emph{H=Hres}, il y a donc bien une hybridation de la résonance \emph{f0} du mode fondamentale en deux résonances distinctes, \emph{f1} et \emph{f2}. Cette hybridation résulte du couplage entre les résonances électrique du filtre à simple STUB et magnétique du YIG.
-\subsection{Balayage en courant et en fréquences}
-\noindent Afin d'établir un contrôle sur les pertes magnétiques du \emph{YIG} et de pouvoir évaluer la configurabilité de la résonance du filtre, un courant I est injecté dans le platine. Ce courant injecté va être converti en onde de spin dans le \emph{YIG} grâce à la combinaison des phénomènes de \emph{Spin Hall Effect} et de \emph{Spin Torque Transfer}\footnote{LETTERS Nature, \emph{Transmission of electrical signals by spin wave.}} et modifier les propriétés résonantes du filtre.
-Un champs magnétique \emph{H=Hres} est appliqué statiquement sur le filtre.
-~\\ A l'aide du logiciel \emph{Labview}, un balayage en courant avec un pas de \emph{2 mA} et en fréquences avec un pas de \emph{210 KHz} est effectué. Les résultats de mesures sur la valeur du paramètre \emph{S21} sont illustrés sur la figure~\underline{\color{blue}\ref{isweep}} suivante:
+~\\\\ Le positionnement de la résonance de plus haute fréquence \emph{f2} est précis à quelques MHz (<10). En revanche, celui de la résonance \emph{f1} est précis à environ 20 Mhz. L'incertitude sur le résultat de la position de la résonance \emph{f1} est donc plus grande commme on peut le constater sur l'allure du paramètre S21 au niveau de la résonance \emph{f1} à \emph{H=Hres}.
+~\\\\ A \emph{H=Hres}, la valeur du paramètre de transmission \emph{S21} à la résonance \emph{f1} se rapproche le plus de celle à la résonance \emph{f2}. Lorsque la valeur du champs magnétique appliqué s'éloigne de \emph{Hres}, la valeur de \emph{S21} aux alentours de la résonance \emph{f1} se détériore.
+\chapter{Etude du contrôle des pertes magnétiques dans le YIG}
+Afin d'établir un contrôle sur les pertes magnétiques du YIG et de pouvoir évaluer la configurabilité de la résonance du filtre, un courant est injecté dans le platine. Ce courant injecté va être converti en onde de spin dans le YIG grâce à la combinaison des phénomènes de \emph{Spin Hall Effect} et de \emph{Spin Torque Transfer}\footnote{LETTERS Nature, \emph{Transmission of electrical signals by spin wave.}} et va modifier les propriétés résonantes du filtre.
+\section{Balayage en courant et en fréquences}
+\noindent Un champs magnétique \emph{H=Hres} est appliqué statiquement sur le filtre. A l'aide du logiciel \emph{Labview}, un balayage en courant avec un pas de \emph{2 mA} et en fréquences avec un pas de \emph{210 KHz} est effectué. Les résultats de mesures sur la valeur du paramètre \emph{S21} sont illustrés sur la figure~\underline{\color{blue}\ref{isweep}} suivante.
+~\\\\Le paramètre de transmission \emph{S21} est d'autant plus faible sur les endroits de la courbe où la couleur est proche du bleu, c'est à dire aux fréquences auquelles le filtre va résonner.
+~\\\\La fréquence de résonance \emph{f2} est la courbe rose la plus au dessus sur la figure~\underline{\color{blue}\ref{isweep}}. Sa valeur peut varier d'une centaine de \emph{MHz} en fonction du courant injecté.
+~\\La fréquence de résonance \emph{f1} est la courbe rose la plus en dessous sur la figure~\underline{\color{blue}\ref{isweep}}. Plus la valeur du courant injecté dans le platine est importante et plus la valeur de \emph{f1} va s'éloigner fortement de la fréquence de résonance \emph{f0} du filtre à champs nul et sans courant injecté dans le platine.
 \begin{figure}[H]
 	\centering
 	\itshape
 	\includegraphics[width=15cm,height=10cm]{isweep.png}
 	\caption{\label{isweep} \underline{Paramètre S21 - Balayage en courant et en fréquences}}
 \end{figure}
+\noindent\footnotesize\textbf{Figure~\underline{\color{blue}\ref{isweep}} | Balayage en courant et en fréquences. Courbes roses}, les courbes des minimums locaux du paramètre de transmission \emph{S21} aux alentours des fréquences \emph{f1} et \emph{f2}. \textbf{c et d}, les valeurs respectives du paramètre \emph{S21} aux alentours de \emph{f1} et  \emph{f2} pour une valeur de courant injecté dans le platine égale à \emph{18 mA}.
+\normalsize 
+~\\\\L'interprétation des résultats de la mesure du balayage en courant et en fréquences est loin d'être évidente. En effet, la courbe de la résonance \emph{f1} est symétrique ce qui signifie que peu importe le sens du courant injecté dans le platine, la résonance \emph{f1} se décalera toujours dans le sens des fréquences inférieures. Alors qu'en injectant un courant de sens opposé dans le platine on aurait pu s'attendre à ce que le champs magnétique créé par le passage du courant dans le platine contribue à déplacer la résonance \emph{f1} soit positivement soit négativement. Or cette dernière se déplace toujours dans le même sens.
+~\\\\Afin de pouvoir interprêter ses résultats, une étude supplémentaire autour de la contribution de l'injection d'un courant dans le platine et des phénomènes physiques complexes intervenant à l'interface entre le YIG et le platine est nécessaire.
+\section{Correspondance des valeurs de S21 en champs et en courant}
+
+
 
 \part{Conclusions}
 
