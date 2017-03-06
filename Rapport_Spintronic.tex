@@ -135,7 +135,7 @@ DC.
 ~\\\\Le but de cette partie est d'étudier par la mesure le \emph{couplage des résonances magnétique et électrique} dans le filtre afin de pouvoir identifier les modèles théoriques physiques permettant de pouvoir contrôler et prévoir la configurabilité du filtre en fonction d'un champs magnétique statique appliqué ou d'un courant injecté dans le platine.
 
 \setcounter{chapter}{0}
-\chapter{Etude des résonateurs \emph{Elliptika}} 
+\chapter{Les résonateurs électriques} 
 ~\\\\\indent Plusieurs types de résonateurs électriques ont été conçus par l'entreprise brestoise \emph{Elliptika}, spécialisée dans la conception de circuits RF et hyperfréquences. Ces résonateurs électriques ont pour rôle de constituer la base du filtre configurable.
 ~\\\\La figure~\underline{\color{blue}\ref{resonateurs}} ci-dessous illustre différentes formes de résonateurs conçues par \emph{Elliptika}.
 \begin{figure}[H]
@@ -144,18 +144,9 @@ DC.
 	\includegraphics[width=12cm,height=4cm]{resonateurs.png}
 	\caption{\label{resonateurs} \underline{Résonateurs Elliptika}}
 \end{figure}
-\section{Les résonateurs de type \emph{Openloop}}
-~\\\noindent Plusieurs types de résonateurs \emph{Openloop} ont été réalisés. Un résonateur Openloop est caractérisé par son Gap (distance séparant les deux brins de la boucle). 
-~\\\\A partir de résonateurs Openloop simples, différents modèles de résonateurs plus complexes et constitués de plusieurs résonateurs Openloop ont également été réalisés. 
-~\\
-\subsubsection{Le résonateur Openloop res04\_3GHz}
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=3cm,height=4cm]{op_res04_3G.png}
-	\caption{\label{op_res04_3G} \underline{Openloop res04\_3GHz}}
-\end{figure}
-\noindent 
+\subsubsection{Le résonateur électrique à simple STUB}
+Le résonateur électrique choisi pour constituer la base du filtre configurable est le résonateur à simple STUB. 
+\subsubsection{Positionnement du YIG sur le résonateur électrique}
 
 ~\\\\
 \chapter{Etude du couplage de résonnance électrique et magnétique }
@@ -424,22 +415,27 @@ De plus, comme cela a été vu dans la partie~\underline{\color{blue}3.2}, pour 
 ~\\\\Afin de déterminer les causes d'une telle variation sur le champs magnétique total lors de l'injection d'un courant dans le platine, plusieurs autres hypothèses restent à étudier pour comprend parfaitement le phénomène telles que la variation du gradient de température dans le YIG lors de l'injection d'un courant dans le platine et la variation des paramètres caractéristiques (aimentation à saturation, etc.) du YIG induite par ce courant. Ces hypothèses n'ont pas eu le temps d'être vérifiées au cours de ce projet de 6 mois mais peuvent constituer une piste de recherche sèrieuse pour la compréhension
 du phénomène de \emph{splitting} des résonances dans son ensemble.
 \part{Conception d'un boîtier sous ADS}
+\setcounter{part}{-3}
 \part{Conclusion}
 
-\setcounter{part}{-5}
+\setcounter{part}{-4}
 \part{Annexes}
 
-\setcounter{part}{-6}
+\setcounter{part}{-5}
 \part{Bibliographie}
 \label{Sources}
 \appendix
 \begin{description}
- \item[$\bullet$] ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator/YIG thin film configuration}
- \item[$\bullet$] LETTERS, Nature, \emph{Transmission of electrical signals by spin wave}
+ \item[$\bullet$] ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator/YIG thin film configuration}.
+ \item[$\bullet$] LETTERS, Nature, \emph{Transmission of electrical signals by spin wave interconversion in a magnetic insulator}.
  \item[$\bullet$] Arxiv, \emph{Study of the cavity-magnon-polariton transmission line shape}.
+ \item[$\bullet$] Physical Review, \emph{Nanosecond time-scale switching of permalloy thin films elements studied by wide-field time-resolved Kerr microscopy}.
+ \item[$\bullet$] Physical Review Letters, \emph{Spin Pumping in Electrodynamically Coupled Magnon-Photon Systems}.
+ \item[$\bullet$] Applied Physics Letters, \emph{Platinum thickness dependence of the inverse spin-Hall voltage from spin pumping in a hybrid yttrium iron garnet/platinum system}.
+ \item[$\bullet$] IETR, INSA Rennes, \emph{Novel N-Band Tunable Resonator Based on N-Order Dual Behavior Resonator and Tunable Capacitors}.
 \end{description}
 
-\setcounter{part}{-7}
+\setcounter{part}{-6}
 \part{Glossaire}
 \begin{description}
  \item[$\bullet$] YIG: \emph{Yittrium Iron Garnet}
