@@ -75,12 +75,50 @@
 
 \pagestyle{fancy}
 \part{Introduction}
-
+Le département micro-ondes de Télécom-Bretagne souhaite concevoir un filtre à
+largeur de bande configurable. Ce filtre est une application des concepts de spintronique et d’objets communicants.
+~\\\\En 2010, une équipe de recherche japonaise a publié un article\footnote{LETTERS, Nature, \emph{Transmission of electrical signals by spin wave}} détaillant la transmission d’un signal électrique dans un isolant. Ce nouveau concept de transmission de
+signal est une application du concept de spintronique dans les matériaux magnétiques
+isolant électriquement. De nombreux travaux de recherches ont émergé suite à la mise
+en évidence de cette preuve de concept et ont permis de faire progresser l’état de l’art.
+~\\\\Dans le cadre de ce projet, le filtre configurable sera constitué d’un résonateur et d’une
+structure hybride à base d’un matériau magnétique isolant électriquement, l’Yttrium
+Iron Garnet (YIG) et d’un métal normal, le platine (Pt). L’application d’un champ
+magnétique statique sur le dispostif permettra de changer les propriétés résonantes du
+filtre.
+~\\\\Les objectifs de ce projet sont:
+~\\
+\begin{itemize}
+ \item[$\bullet$] La conception d'un prototype de filtre configurable fonctionnant à l'air libre et à température ambiante (la conception d'un filtre à largeur de bande configurable a déjà été étudiée par une équipe scientifique en 2015\footnote{Physical Review Letters, \emph{Spin Pumping In Electrodynamically Coupled Magnon-Photon Systems}} au sein d'une cavité résonnante.
+ \item[$\bullet$] L'étude de l'intéraction magnon-photon en utilisant l'association YIG/Pt (couplage des résonances électrique du filtre et magnétique du YIG).
+ \item[$\bullet$] Le contrôle des pertes magnétiques dans le YIG avec la mise en jeu des phénomènes de \emph{Spin Hall Effect} (SHE) et de \emph{Spin Transfer Torque} (STT).
+ \item[$\bullet$] La détection d’un courant de spin grâce aux phénomènes physiques réciproques au SHE et au STT que sont les phénomènes de \emph{Spin Pumping} (SP) et de \emph{Inverse Spin Hall Effect} (ISHE). La présence d'un tel courant sera mis en évidence par la détection d'une tension DC aux bornes du platine partageant une interface commune avec le YIG.
+ \item[$\bullet$] La conception d’un boîtier sous le logiciel ADS permettant d’obtenir une structure fiable et solide qui servira à contenir au sein d’une cavité le matériau magnétique (YIG) sur lequel
+une couche de platine (Pt) d’épaisseur nanométrique a été déposée par pulvérisation
+cathodique.
+\end{itemize}
 \setcounter{chapter}{1}
-\section{La technologie Spintronic}
-
-\section{Le matériau magnétique Yttrium Iron Garnet}
-
+\subsubsection{La technologie Spintronic}
+\noindent Cette thématique de recherche, communément appelé spintronic ou électronique de
+spin, fut révélée au grand public lors de l’obtention du prix Nobel de physique par Albert
+Fert en 2007 pour ses travaux sur la magnétorésistance géante. Cette découverte
+a joué un rôle cruciale sur l’augmentation drastique de la capacité de nos disques dur
+magnétique (de 1Gb/in² à 600 Gb/in² avec l'utilisation des têtes GMRs).
+~\\\\
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=9cm]{introspin.png}
+	\caption{\label{introspin} \underline{Spintronic}}
+\end{figure}
+\subsubsection{Le matériau magnétique Yttrium Iron Garnet}
+\noindent L'Yttrium Iron Garnet ou YIG est le matériau magnétique le plus utilisé dans les systèmes radiofréquences. C'est un matériau magnétique isolant électriquement mais aussi celui possédant le moins de pertes magnétiques (inférieures à $10^{-4}$).
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=8cm,height=3cm]{introyig.png}
+	\caption{\label{introspin} \underline{Yttrium Iron Garnet}}
+\end{figure}
 \part{Le filtre configurable en fréquences}
 Le filtre configurable est constitué d’un résonateur électrique et d’une
 structure hybride à base d’un matériau magnétique isolant électriquement, l’Yttrium
@@ -242,6 +280,24 @@ De plus, la position du point d'abscisse \emph{Hres} correspond à un \emph{gap}
 ~\\\\ A \emph{H=Hres}, la valeur du paramètre de transmission \emph{S21} à la résonance \emph{f1} se rapproche le plus de celle à la résonance \emph{f2}. Lorsque la valeur du champs magnétique appliqué s'éloigne de \emph{Hres}, la valeur de \emph{S21} aux alentours de la résonance \emph{f1} se détériore.
 \chapter{Etude du contrôle des pertes magnétiques dans le YIG}
 Afin d'établir un contrôle sur les pertes magnétiques du YIG et de pouvoir évaluer la configurabilité de la résonance du filtre, un courant est injecté dans le platine. Ce courant injecté va être converti en onde de spin dans le YIG grâce à la combinaison des phénomènes de \emph{Spin Hall Effect} et de \emph{Spin Torque Transfer}\footnote{LETTERS Nature, \emph{Transmission of electrical signals by spin wave.}} et va modifier les propriétés résonantes du filtre.
+\section{Temps de stabilisation des paramètres S du filtre configurable}
+Cette section traite du temps mis par le prototype de filtre configurable pour se stabiliser lors de l'injection d'un courant dans le platine.
+\noindent La figure~\underline{\color{blue}\ref{stabneg}} illustre le temps mis par le paramètre \emph{S21} pour se stabiliser lors de l'injection d'un courant dans le platine.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{stabneg.png}
+	\caption{\label{stabneg} \underline{Temps de transition de S21 - 1}}
+\end{figure}
+\noindent Plus la valeur du courant injecté est élevé et plus le paramètre S21 va mettre du temps à atteindre sa valeur d'équilibre. En effet, par exemple le temps d'attente avant que S21 ne se stabilise pour un courant injecté dans le platine d'une valeur de \emph{20 mA} est d'environ \emph{3 s} tandis qu'il n'est que de quelques \emph{ms} pour \emph{I=75 mA}.
+~\\\noindent La figure~\underline{\color{blue}\ref{stabpos}} illustre le temps mis par le paramètre \emph{S21} pour se stabilise lors de de l'injection d'un courant non-nul à un courant nul dans le platine.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{stabpos.png}
+	\caption{\label{stabpos} \underline{Temps de transition de S21 - 2}}
+\end{figure}
+\noindent Le temps pour \emph{S21} d'atteindre sa position d'équilibre lors du passage d'un courant non-nul à un courant nul est plus élevé que dans le cas précédent (minimum environ \emph{3 s} pour \emph{I=20 mA}). Plus la valeur de courant injecté était grande et plus le paramètre S21 met du temps à se stabiliser.
 \section{Balayage en courant et en fréquences}
 \noindent Un champs magnétique \emph{H=Hres} est appliqué statiquement sur le filtre. A l'aide du logiciel \emph{Labview}, un balayage en courant avec un pas de \emph{2 mA} et en fréquences avec un pas de \emph{210 KHz} est effectué. Les résultats de mesures sur la valeur du paramètre \emph{S21} sont illustrés sur la figure~\underline{\color{blue}\ref{isweep}} suivante.
 ~\\\\Le paramètre de transmission \emph{S21} est d'autant plus faible sur les endroits de la courbe où la couleur est proche du bleu, c'est à dire aux fréquences auquelles le filtre va résonner.
@@ -372,25 +428,6 @@ La non-linéarité se retrouve également sur la figure ci-dessus.
 De plus, comme cela a été vu dans la partie~\underline{\color{blue}3.2}, pour une valeur injecté de \emph{18 mA} à \emph{H=Hres=990 Oe}, la correspondance se situe pour une valeur de champs de \emph{H=970 Oe} à \emph{I=O mA}. Le courant injecté dans le platine entraîne donc une différence de \emph{20 Oe} dans ce cas de figure ce qui est bien supérieur à la contribution maximale du champs magnétique généré par l'injection d'un courant dans le platine.
 ~\\\\Afin de déterminer les causes d'une telle variation sur le champs magnétique total lors de l'injection d'un courant dans le platine, plusieurs autres hypothèses restent à étudier pour comprend parfaitement le phénomène telles que la variation du gradient de température dans le YIG lors de l'injection d'un courant dans le platine et la variation des paramètres caractéristiques (aimentation à saturation, etc.) du YIG induite par ce courant. Ces hypothèses n'ont pas eu le temps d'être vérifiées au cours de ce projet de 6 mois mais peuvent constituer une piste de recherche sèrieuse pour la compréhension
 du phénomène de \emph{splitting} des résonances dans son ensemble.
-\chapter{Temps de stabilisation des paramètres S du filtre configurable}
-Ce chapitre traite du temps mis par le prototype de filtre configurable pour se stabiliser lors de l'injection d'un courant dans le platine.
-\section{Temps de stabilisation lors de l'application d'un courant non-nul}
-\noindent La figure~\underline{\color{blue}\ref{stabneg}} illustre le temps mis par le paramètre \emph{S21} pour se stabiliser lors de l'injection d'un courant dans le platine.
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=10cm,height=7cm]{stabneg.png}
-	\caption{\label{stabneg} \underline{Stabilisation de S21 - 1}}
-\end{figure}
-\section{Temps de stabilisation lors du passage d'un courant non-nul à un courant nul}
-\noindent La figure~\underline{\color{blue}\ref{stabpos}} illustre le temps mis par le paramètre \emph{S21} pour se stabilise lors de de l'injection d'un courant non-nul à un courant nul dans le platine.
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=10cm,height=7cm]{stabpos.png}
-	\caption{\label{stabpos} \underline{Stabilisation de S21 - 2}}
-\end{figure}
-
 \part{Conception d'un boîtier sous ADS}
 \part{Conclusion}
 
