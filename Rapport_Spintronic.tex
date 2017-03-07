@@ -13,31 +13,39 @@
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-~\\
-\begin{figure}
-
-\end{figure}
-
 \begingroup
+\noindent \hspace{15cm}\textsc{08/03/2017}
+\begin{figure}[H]
+	\hspace*{14.55cm}
+	\centering
+	\itshape
+	\includegraphics[width=3cm,height=3cm]{TB_contour_quadri.jpg}
+\end{figure}
 \thispagestyle{empty}
+
 \begin{tikzpicture}[remember picture,overlay]
-  \coordinate [below=12cm] (midpoint) at (current page.north);
+  \coordinate [below=10cm] (midpoint) at (current page.north);
   \node at (current page.north west)
   {\begin{tikzpicture}[remember picture,overlay]
-      %\node[anchor=north west,inner sep=0pt] at (0,-12){ \resizebox{!}{13.5cm}{\includegraphics[width=\paperwidth]{}}}; % Background image
-      \draw[anchor=north] (midpoint) node [fill=blue1!15!white,fill opacity=0.4,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\Huge\centering \textsf{Rapport de projet S5} \\[0pt] % Book title
+      %\node[anchor=north west,inner sep=0pt] at (0,-12){ \resizebox{!}{13.5cm}{\includegraphics[width=\paperwidth]{fond_ecran_svom.jpg}}}; % Background image
+      \draw[anchor=north] (midpoint) node [fill=blue1!20!white,fill opacity=0.2,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\Huge\centering \textsf{Rapport de Projet S5} \\[0pt] % Book title
       {\Large Département micro-ondes de Télécom-Bretagne}\\[20pt] 
-      {\Huge Etude d’un filtre configurable basé sur l’utilisation de matériaux issus de la spintronic}}}; 
+      {\Huge Etude d'un filtre configurable basé sur l'utilisation de matériaux issus de la spintronic\\[20pt]
+      {\Large\centering Rodolphe JEUNEHOMME\\[40pt]
+      {\begin{figure}[H]
+	\hspace*{6cm}
+	\centering
+	\itshape
+	\includegraphics[width=8cm,height=5cm]{SSR_YIG14.png}
+      \end{figure}}}}}};
+  
   \end{tikzpicture}};
+  
 \end{tikzpicture}
-
-\title{}
-\author{\bsc{Rodolphe} - \bsc{Jeunehomme}}
 
 \vfill
 
 \endgroup
-
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
@@ -84,7 +92,7 @@ filtre.
 ~\\\\Les objectifs de ce projet sont:
 ~\\
 \begin{itemize}
- \item[$\bullet$] La conception d'un prototype de filtre configurable fonctionnant à l'air libre et à température ambiante (la conception d'un filtre à largeur de bande configurable a déjà été étudiée par une équipe scientifique en 2015\footnote{Physical Review Letters, \emph{Spin Pumping In Electrodynamically Coupled Magnon-Photon Systems}} au sein d'une cavité résonnante.
+ \item[$\bullet$] La conception d'un prototype de filtre configurable fonctionnant à l'air libre et à température ambiante (la conception d'un filtre à largeur de bande configurable a déjà été étudiée par une équipe scientifique en 2015\footnote{Physical Review Letters, \emph{Spin Pumping In Electrodynamically Coupled Magnon-Photon Systems}} au sein d'une cavité résonnante).
  \item[$\bullet$] L'étude de l'intéraction magnon-photon en utilisant l'association YIG/Pt (couplage des résonances électrique du filtre et magnétique du YIG).
  \item[$\bullet$] Le contrôle des pertes magnétiques dans le YIG avec la mise en jeu des phénomènes de \emph{Spin Hall Effect} (SHE) et de \emph{Spin Transfer Torque} (STT).
  \item[$\bullet$] La détection d’un courant de spin grâce aux phénomènes physiques réciproques au SHE et au STT que sont les phénomènes de \emph{Spin Pumping} (SP) et de \emph{Inverse Spin Hall Effect} (ISHE). La présence d'un tel courant sera mis en évidence par la détection d'une tension DC aux bornes du platine partageant une interface commune avec le YIG.
@@ -103,7 +111,7 @@ magnétique (de 1Gb/in² à 600 Gb/in² avec l'utilisation des têtes GMRs).
 \begin{figure}[H]
 	\centering
 	\itshape
-	\includegraphics[width=15cm,height=9cm]{introspin.png}
+	\includegraphics[width=13cm,height=7cm]{introspin.png}
 	\caption{\label{introspin} \underline{Spintronic}}
 \end{figure}
 \subsubsection{Le matériau magnétique Yttrium Iron Garnet}
@@ -114,7 +122,7 @@ magnétique (de 1Gb/in² à 600 Gb/in² avec l'utilisation des têtes GMRs).
 	\includegraphics[width=8cm,height=3cm]{introyig.png}
 	\caption{\label{introspin} \underline{Yttrium Iron Garnet}}
 \end{figure}
-\part{Le filtre configurable en fréquences}
+\part{Le filtre Configurable}
 Le filtre configurable est constitué d’un résonateur électrique et d’une
 structure hybride à base d’un matériau magnétique isolant électriquement, l’Yttrium
 Iron Garnet (YIG) et d’un métal normal, le platine (Pt). L’application d’un champ
@@ -144,10 +152,28 @@ DC.
 	\includegraphics[width=12cm,height=4cm]{resonateurs.png}
 	\caption{\label{resonateurs} \underline{Résonateurs Elliptika}}
 \end{figure}
-\subsubsection{Le résonateur électrique à simple STUB}
-Le résonateur électrique choisi pour constituer la base du filtre configurable est le résonateur à simple STUB. 
-\subsubsection{Positionnement du YIG sur le résonateur électrique}
+\section{Le résonateur électrique à simple STUB}
+\noindent La figure~\underline{\color{blue}\ref{simplestub}} illustre le résonateur électrique à simple STUB choisi pour constituer la base du filtre configurable. Il est le résonateur possédant la configuration la plus simple ce qui s'avérera important pour le positionnement du YIG sur le résonateur.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=3.5cm,height=5cm]{simplestub.png}
+	\caption{\label{simplestub} \underline{Résonateur Simple STUB}}
+\end{figure}
+\noindent Ce résonateur coupe-bande est constitué d'un tronçon de ligne de transmission aux bouts duquel sont situés les ports du résonateurs \emph{P1} et \emph{P2}. Un tronçon de ligne de transmission simple STUB permet de créer la résonance du signal afin de couper la transmission du signal autour de la fréquence \emph{4.72 GHz}.
+~\\\\Un couplage capacitif a été rajouté entre les deux tronçons de ligne de transmission afin d'augmenter la sélectivité du filtre (c'est à dire de diminuer la largeur de la réponse du paramètre de transmission \emph{S21} à \emph{-3 dB} à la résonance du filtre) et de diminuer son encombrement. Sans couplage capacitif, les dimensions de la ligne simple STUB seraient d'environ \emph{20mm} (approximation effectuée à l'aide de l'outil \emph{linecalc} du logiciel \emph{Advanced Design System}) et l'utilisation du couplage permet de réduire la longueur de la ligne d'environ \emph{5 mm}.
+\section{Positionnement du YIG sur le résonateur électrique}
+~\\
+\noindent Le matériau magnétique YIG doit être positionné sur la surface du filtre émettant le maximum de champs magnétique afin de maximiser le couplage entre le YIG et le résonateur électrique à leurs conditions de résonance respectives.
+~\\\\Une simulation electromagnétique a été effectuée sous le logiciel \emph{Advanced Design System} ainsi que des mesures sur le champs magnétique rayonné par le filtre en fonction de la fréquence du signal.
+~\\\\La surface maximum en champs magnétique c'est à dire celle ou le couplage entre le YIG et le résonateur électrique sera le plus fort est située à hauteur de $\frac{\lambda}{4}$ (par rapport à la résonance) à la moitié du tronçon de ligne simple STUB de longueur $\frac{\lambda}{2}$ comme illustré sur la figure~\underline{\color{blue}\ref{elec}} suivante:
 
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=13cm,height=5.5cm]{elec.png}
+	\caption{\label{elec} \underline{Simulation Champs Magnétique}}
+\end{figure}
 ~\\\\
 \chapter{Etude du couplage de résonnance électrique et magnétique }
 Le résonateur électrique utilisé pour les mesures est le résonateur à simple STUB présenté dans le chapitre précédent. Un matériau magnétique (YIG), sur lequel a été déposé par pulvérisation cathodique une fine couche de platine (Pt), est positionné sur le court-circuit du résonateur électrique et donc à la position du maximum de champs magnétique émis par le résonateur à simple STUB. Un champs magnétique statique est appliqué sur le dipositif afin de faire résonner magnétiquement le YIG et donc de pouvoir étudier le couplage des résonances électrique et magnétique.
@@ -172,14 +198,14 @@ Le résonateur électrique utilisé pour les mesures est le résonateur à simpl
 ~\\\\
 \normalsize Le filtre situé entre les deux bobines est le prototype de filtre configurable nous servant de test à l'étude du couplage de résonance électrique et magnétique. L'association YIG(\unit{6}{\micro\meter})/Pt(\unit{6}{\nano\meter}) est positionné sur le court-circuit du résonateur électrique à l'aide de laque d'argent afin de le fixer et de pouvoir conduire le courant entre les fils reliés au générateur de courant/tension \emph{KEITHLEY} et le platine.
 \section{Mesure de la résonance électrique du filtre à simple STUB}
-~\\\noindent Le filtre à simple STUB utilisé est un filtre coupe-bande. La figure~\underline{\color{blue}\ref{fo}} ci-dessous réprésente les paramètres \emph{S11} de réflexion et \emph{S21} de transmission du filtre avec l'association YIG/Pt à champs magnétique nul.
+~\\\noindent Le filtre à simple STUB utilisé est un filtre coupe-bande. La figure~\underline{\color{blue}\ref{fo}} ci-dessous réprésente les paramètres \emph{S11} de réflexion et \emph{S21} de transmission mesurés du filtre avec l'association YIG/Pt à champs magnétique nul et sans l'association YIG/Pt.
 \begin{figure}[H]
 	\centering
 	\itshape
-	\includegraphics[width=10cm,height=7cm]{f0.png}
+	\includegraphics[width=15cm,height=7cm]{f02.png}
 	\caption{\label{fo} \underline{Résonance électrique}}
 \end{figure}
-\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{fo}} | Résonance électrique.} Le paramètre $ fo\simeq4.736\ GHz$ correspond à la fréquence à laquelle le filtre coupe-bande à simple STUB ne laisse plus passer le signal.
+\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{fo}} | Droite: avec YIG/Pt, }le paramètre $ fo\simeq4.736\ GHz$ correspond à la fréquence à laquelle le filtre coupe-bande à simple STUB ne laisse plus passer le signal. \textbf{Gauche: sans YIG/Pt, }il y a un décalage de la résonance d'environ 200 MHz vers les fréquences plus faibles.
 ~\\\\
 \normalsize Afin d'étudier la reproductibilité du dispositif et de déterminer une incertitude sur la valeur du paramètre de résonance \emph{f0}, plusieurs mesures du paramètres \emph{S21} du filtre avec l'association YIG/Pt ont été effectuées après avoir réinstallé plusieurs fois le dispositif entre les bobines. 
 ~\\La figure~\underline{\color{blue}\ref{foreprod}} ci-dessous, illustre l'incertitude de mesures sur la résonance électrique du dispositif.
@@ -189,7 +215,7 @@ Le résonateur électrique utilisé pour les mesures est le résonateur à simpl
 	\includegraphics[width=10cm,height=7cm]{f0reprod.png}
 	\caption{\label{foreprod} \underline{Résonance électrique - Repoductibilité des mesures}}
 \end{figure}
-\noindent L'incertitude sur la valeur du paramètre de transmission \emph{\emph{S21}} est plus élevé lorsque celle-ci est proche de 0. L'incertitude trouvée à hauteur de la fréquence \emph{f0} est $ fo\simeq4.740\pm0.015\ GHz$.
+\noindent L'incertitude sur la valeur du paramètre de transmission \emph{\emph{S21}} est plus élevé lorsque celle-ci est proche de 0. L'incertitude sur \emph{f0} est $ fo\simeq4.740\pm0.015\ GHz$.
 \section{La résonance magnétique de l'Yttrium Iron Garnet}
 ~\\\noindent L'Yttrium Iron Garnet ou YIG entre en résonance magnétique sous l'effet d'un de l'application d'un champs magnétique H statique. 
 ~\\La figure~\underline{\color{blue}\ref{resomag}} ci-dessous illustre la courbe théorique de résonance magnétique du YIG\footnote{ArXiv, \emph{Control of magnon-photon coupling strength in a planar resonator/YIG thin film configura-
@@ -214,20 +240,21 @@ tion}} en fonction du champs magnétique qui lui est appliqué.
 \noindent Lorsqu'un champs magnétique \emph{H} statique est appliqué sur le dispositif \emph{filtre + association YIG/PT}, un phénomène de séparation de la fréquence de résonance \emph{f0} en deux fréquences distinctes \emph{f1} et \emph{f2} apparaît. Ce phénomène de \emph{splitting} est dû au couplage des résonances électrique et magnétique.
 La présence d'irrégularités le long des pentes des courbes des pics de résonance est dûe à la résonance des autres modes magnétique présent dans le \emph{YIG} dont le nombre dépend des dimensions de ce dernier\footnote{Seul la résonance du mode fondamental est étudiée dans ce rapport.}. 
 \subsection{Balayage en champs et en fréquences}
+~\\
 \noindent Afin d'étudier le comportement de ce phénomène de \emph{splitting}, un balayage en champs et en fréquence avec respectivement un pas de \emph{2.9 Oe} et de \emph{210 KHz} a été effectué. Les données stockées par le logiciel \emph{Labview} ont été analysées à l'aide d'un script \emph{matlab}.
-~\\La figure~\underline{\color{blue}\ref{matH}} ci-dessous représente la dépendance en champs et en fréquence du paramètre de transmission \emph{S21}.
+~\\\\La figure~\underline{\color{blue}\ref{matH}} ci-dessous représente la dépendance en champs et en fréquence du paramètre de transmission \emph{S21}. Le paramètre S21 est ici représenté par un code couleur. Il varie du rouge foncé pour 0 dB au bleu foncé pour -12 dB (c'est à dire lorsque le signal ne passe plus). Les conditions de résonance maximum du filtre correspondent aux coordonnées des zones du graphe ou la couleur est proche du bleu foncé.
 \begin{figure}[H]
 	\centering
 	\itshape
-	\includegraphics[width=15cm,height=10cm]{matH.png}
+	\includegraphics[width=13cm,height=8cm]{matH.png}
 	\caption{\label{matH} \underline{Paramètre S21 - Balayage en champs magnétique et en fréquences}}
 \end{figure}
 \noindent\footnotesize\textbf{Figure~\underline{\color{blue}\ref{matH}} | Balayage en champs et en fréquences. Courbes roses}, les courbes des minimums locaux du paramètre de transmission \emph{S21} aux alentours des fréquences \emph{f1} et \emph{f2} auxquelles se superposent les courbes de \emph{f1} et \emph{f2} du molède de couplage harmonique pour une valeur de coefficient de couplage $k\ \text{=}\ 0.1504$ et d'aimentation du YIG à saturation $Ms\ \text{=}\ 1750\ A.m^{-1}$. \textbf{Segment AB}, la valeur du \emph{gap} de fréquences pour une valeur de champs injecté dans le platine $H\ \text{=}\ Hres\ \text{=}\ 995.92\ 0e$. \textbf{Courbe noire horizontale}, la fréquence de résonance \emph{f0} du filtre à champs nul.
 ~\\\\
 \normalsize
-\noindent Le paramètre S21 est ici représenté par un code couleur. Il varie du rouge foncé pour 0 dB au bleu foncé pour -12 dB (c'est à dire lorsque le signal ne passe plus). Les conditions de résonance maximum du filtre correspondent aux coordonnées des zones du graphe ou la couleur est proche du bleu foncé.
 ~\\La position en fréquence des résonances \emph{f1} et \emph{f2} varie en fonction de la valeur du champs magnétique injecté dans le YIG. On observe ainsi l'apparition d'une bande de résonance interdite.
 \subsection{Utilisation du modèle de couplage harmonique}
+~\\
 \noindent Le modèle de couplage harmonique\footnote{Arxiv, \emph{Study of the cavity-magnon-polariton transmission line shape}.} entre les résonances électrique et magnétique est utilisé dans le but de déterminer les fomules analytiques qui permettront de décrire le comportement de la variation des fréquences de résonances \emph{f1} et \emph{f2} en fonction du champs magnétique statique appliqué sur le filtre. 
 ~\\Ce modèle s'appuie sur les formules analytiques suivantes :
 $$\underset{1}{f}\ \text{=}\ \frac{1}{2}*(\underset{0}{f}\text{+}\underset{r}{f})\text{+}\sqrt{(\underset{0}{f}-\underset{r}{f})^{2}\text{+}k^4*\underset{0}{f}^2}$$
@@ -242,9 +269,10 @@ de \emph{f1} et \emph{f2} se superposent parfaitement avec celle des positions d
 La courbe noire horizontale sur cette même figure représente la résonance \emph{f0} du filtre lorsque $H\text{=}0\ Oe$. Les fréquences \emph{f1} et \emph{f2} tendent toutes deux vers \emph{f0} lorsque le champs magnétique tend vers $Hres\pm\infty$.  
 ~\\\\Ceci démontre que le modèle de couplage harmonique est un bon modèle pour représenter analytiquement le couplage de résonance électrique et magnétique dans le filtre.
 \subsection{Détermination du champs magnétique résonant}
+~\\
 \noindent Toujours en se basant sur le résultat des mesures en champs et en fréquences du paramètre de transmission \emph{S21} (voir figure~\underline{\color{blue}\ref{matH}}), il est possible de déterminer ainsi la valeur exacte \emph{Hres} du champs magnétique à appliquer sur le filtre tel que le couplage de résonance électrique et magnétique soit au maximum.
 ~\\En effet, d'après le modèle de couplage harmonique\footnotemark[3], le couplage entre les résonances électrique et magnétique est maximum lorsque $\underset{0}{f}-\underset{1}{f}\ \text{=}\ \underset{2}{f}-\underset{0}{f}$.
-~\\La figure~\underline{\color{blue}\ref{fifo}} ci-dessous représente les courbes $\underset{0}{f}-\underset{1}{f}$ en bleu et $\underset{2}{f}-\underset{0}{f}$ en rouge:
+~\\\\La figure~\underline{\color{blue}\ref{fifo}} ci-dessous représente les courbes $\underset{0}{f}-\underset{1}{f}$ en bleu et $\underset{2}{f}-\underset{0}{f}$ en rouge:
 \begin{figure}[H]
 	\centering
 	\itshape
@@ -267,7 +295,7 @@ De plus, la position du point d'abscisse \emph{Hres} correspond à un \emph{gap}
 \chapter{Etude du contrôle des pertes magnétiques dans le YIG}
 Afin d'établir un contrôle sur les pertes magnétiques du YIG et de pouvoir évaluer la configurabilité de la résonance du filtre, un courant est injecté dans le platine. Ce courant injecté va être converti en onde de spin dans le YIG grâce à la combinaison des phénomènes de \emph{Spin Hall Effect} et de \emph{Spin Torque Transfer}\footnote{LETTERS Nature, \emph{Transmission of electrical signals by spin wave.}} et va modifier les propriétés résonantes du filtre.
 \section{Temps de stabilisation des paramètres S du filtre configurable}
-Cette section traite du temps mis par le prototype de filtre configurable pour se stabiliser lors de l'injection d'un courant dans le platine.
+~\\\noindent Cette section traite du temps mis par le prototype de filtre configurable pour se stabiliser lors de l'injection d'un courant dans le platine.
 \noindent La figure~\underline{\color{blue}\ref{stabneg}} illustre le temps mis par le paramètre \emph{S21} pour se stabiliser lors de l'injection d'un courant dans le platine.
 \begin{figure}[H]
 	\centering
@@ -285,6 +313,7 @@ Cette section traite du temps mis par le prototype de filtre configurable pour s
 \end{figure}
 \noindent Le temps pour \emph{S21} d'atteindre sa position d'équilibre lors du passage d'un courant non-nul à un courant nul est plus élevé que dans le cas précédent (minimum environ \emph{3 s} pour \emph{I=20 mA}). Plus la valeur de courant injecté était grande et plus le paramètre S21 met du temps à se stabiliser.
 \section{Balayage en courant et en fréquences}
+~\\
 \noindent Un champs magnétique \emph{H=Hres} est appliqué statiquement sur le filtre. A l'aide du logiciel \emph{Labview}, un balayage en courant avec un pas de \emph{2 mA} et en fréquences avec un pas de \emph{210 KHz} est effectué. Les résultats de mesures sur la valeur du paramètre \emph{S21} sont illustrés sur la figure~\underline{\color{blue}\ref{isweep}} suivante.
 ~\\\\Le paramètre de transmission \emph{S21} est d'autant plus faible sur les endroits de la courbe où la couleur est proche du bleu, c'est à dire aux fréquences auquelles le filtre va résonner.
 ~\\\\La fréquence de résonance \emph{f2} est la courbe rose la plus au dessus sur la figure~\underline{\color{blue}\ref{isweep}}. Sa valeur peut varier d'une centaine de \emph{MHz} en fonction du courant injecté.
@@ -327,41 +356,25 @@ avec $\frac{\underset{eff}{g}}{2*\pi}$ lié au coefficient de couplage \emph{k}.
 \chapter{Etude de la détection de la tension DC en bout de chaîne}
 Ce chapitre traite de l'étude de la détection de la tension DC en bout de chaîne à la condition de résonance du YIG pour une valeur de champs magnétique \emph{H=Hres} ainsi que de l'influence du courant injecté dans le platine sur la tension DC récupérée en bout de chaîne.
 ~\\\\ Les mesures en tension sont effecutées aux bornes du platine en augmentant progressivement la fréquence de 4.4 GHz à 5.1 GHz avec une précision de 5000 points de mesures. Les mesures sont ensuite récupérées dans un fichier à l'aide du logiciel \emph{Labview}.
-\section{Mesures à champs nul}
-\noindent La figure~\underline{\color{blue}\ref{dcnull}} illustre la tension DC en bout de chaîne à champs magnétique nul.
+\section{Mesures d'une tension DC}
+~\\\noindent La figure~\underline{\color{blue}\ref{dch}} illustre la tension DC en bout de chaîne aux champs magnétique \emph{H=+Hres}, \emph{H=-Hres} et \emph{H= 0 Oe}.
 \begin{figure}[H]
 	\centering
 	\itshape
-	\includegraphics[width=8cm,height=6cm]{dcnull.png}
-	\caption{\label{dcnull} \underline{Tension DC à H=0 Oe}}
-\end{figure}
-\section{Mesures à champs magnétique positif}
-\noindent La figure~\underline{\color{blue}\ref{dchpos}} illustre la tension DC en bout de chaîne à champs magnétique \emph{H=+Hres}.
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=10cm,height=7cm]{dchpos.png}
-	\caption{\label{dchpos} \underline{Tension DC à H=+Hres}}
-\end{figure}
-\section{Mesures à champs magnétique négatif}
-\noindent La figure~\underline{\color{blue}\ref{dchneg}} illustre la tension DC en bout de chaîne à champs magnétique \emph{H=-Hres}.
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=10cm,height=7cm]{dchneg.png}
-	\caption{\label{dchneg} \underline{Tension DC à H=-Hres}}
+	\includegraphics[width=10cm,height=7cm]{dch.png}
+	\caption{\label{dch} \underline{Tension DC en bout de chaîne}}
 \end{figure}
 \section{Interprétation des résultats de mesures de la tension DC}
-\noindent A champs nul, la tension DC détectée n'est autre que le bruit généré par l'environnement de mesures à l'air libre et l'application du signal RF dans le filtre.
-~\\Pour une valeur de champs positive \emph{H=+Hres}, la tension détectée est négative tandis qu'à \emph{H=-Hres}, la tension détectée est positive. Dans ces deux cas, la tension détectée est de l'ordre du micro-volt.
-~\\Lors de l'application d'un champs magnétique \emph{H}=$\pm$\emph{Hres}, le pic de tension le plus élevé est situé à la fréquence de résonance magnétique \emph{fr} du YIG comme illustré sur la figure~\underline{\color{blue}\ref{dcfr}}:
+~\\\noindent A champs nul, la tension DC détectée n'est autre que le bruit généré par l'environnement de mesures à l'air libre et l'application du signal RF dans le filtre.
+~\\\\Pour une valeur de champs positive \emph{H=+Hres}, la tension détectée est négative tandis qu'à \emph{H=-Hres}, la tension détectée est positive. Dans ces deux cas, la tension détectée est de l'ordre du micro-volt.
+~\\\\Lors de l'application d'un champs magnétique \emph{H}=$\pm$\emph{Hres}, le pic de tension le plus élevé est situé à la fréquence de résonance magnétique \emph{fr} du YIG comme illustré sur la figure~\underline{\color{blue}\ref{dcfr}}:
 \begin{figure}[H]
 	\centering
 	\itshape
 	\includegraphics[width=15cm,height=6cm]{dcfr3.png}
 	\caption{\label{dcfr} \underline{Tension DC et S21 à H=Hres}}
 \end{figure}
-\noindent Les différents pics de tensions apparant autres que celui centré à la fréquence de résonance \emph{fr} du YIG sont dûs à la résonance des autres modes que le mode fondamentale dans le YIG. 
+\noindent Les différents pics de tensions apparant, autres que celui centré à la fréquence de résonance \emph{fr} du YIG, sont dûs à la résonance des autres modes que le mode fondamentale dans le YIG. 
 ~\\\\L'apparition d'une tension DC en bout de chaîne est dûe à l'apparition d'un courant de spin dans le YIG à sa condition de résonance magnétique \emph{H=Hres}. Ce courant de spin est ensuite converti en courant électrique dans le platine par le biais des phénomènes physiques de \emph{Spin-Pumping} et de \emph{Inverse Spin Hall Effect}\footnote{Letters, \emph{Transmission of electrical signals by spin-wave interconversion in a magnetic insulator}} ayant lieu à l'interface entre le YIG et le platine.
 \chapter{Influence du courant injecté dans le platine}
 Des mesures ont été effectuées pour déterminer la réponse en tension lors de l'injection d'un courant dans le platine et pour essayer de comprendre le phénomène physique responsable du décalage de la fréquence de résonance \emph{f1} s'effectuant toujours dans le même sens peu importe le sens du courant injecté. 
@@ -414,13 +427,80 @@ La non-linéarité se retrouve également sur la figure ci-dessus.
 De plus, comme cela a été vu dans la partie~\underline{\color{blue}3.2}, pour une valeur injecté de \emph{18 mA} à \emph{H=Hres=990 Oe}, la correspondance se situe pour une valeur de champs de \emph{H=970 Oe} à \emph{I=O mA}. Le courant injecté dans le platine entraîne donc une différence de \emph{20 Oe} dans ce cas de figure ce qui est bien supérieur à la contribution maximale du champs magnétique généré par l'injection d'un courant dans le platine.
 ~\\\\Afin de déterminer les causes d'une telle variation sur le champs magnétique total lors de l'injection d'un courant dans le platine, plusieurs autres hypothèses restent à étudier pour comprend parfaitement le phénomène telles que la variation du gradient de température dans le YIG lors de l'injection d'un courant dans le platine et la variation des paramètres caractéristiques (aimentation à saturation, etc.) du YIG induite par ce courant. Ces hypothèses n'ont pas eu le temps d'être vérifiées au cours de ce projet de 6 mois mais peuvent constituer une piste de recherche sèrieuse pour la compréhension
 du phénomène de \emph{splitting} des résonances dans son ensemble.
+
+\setcounter{chapter}{1}
+\setcounter{section}{0}
 \part{Conception d'un boîtier sous ADS}
+Le but de cette partie du projet est la conception d’un boîtier sous le logiciel \emph{Advanced Design System} permettant d’obtenir une structure fiable et solide qui servira à contenir au sein d’une cavité le matériau magnétique (YIG) sur lequel sera déposé une fine couche de platine par pulvérisation cathodique.
+~\\\\Il s'agira donc de réadapter le design utilisé pour la conception du résonateur électrique à simple STUB, sur un substrat \emph{ROGERS} de permitivité 4.15, pour concevoir le design d'un circuit multicouches intégrant le résonateur électrique à simple STUB, la cavité pour contenir le YIG et les \emph{pads} de connexions pour contrôler et mesurer le comportement du filtre.
+\section{Le substrat utilisé pour la conception}
+~\\\noindent
+Le substrat utilisé est un substrat \emph{LTCC} dont les propriétés sont illustrées sur la figure~\underline{\color{blue}\ref{substrat}} suivante:
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=5cm]{material_substrat.PNG}
+	\caption{\label{substrat} \underline{Propriétés substrat LTCC}}
+\end{figure}
+\noindent La permitivité du substrat est de 4.5 et les pertes magnétiques sont de $18*10^{-3}$ et son épaisseur est de  $500*10^{-6}\ m$. Plus la permitivité est grande et plus ???.
+\section{Le résonateur électrique à simple STUB}
+~\\\noindent Il s'agit d'adapter les dimensions du filtre et notemment de la ligne simple STUB pour que le filtre possède des propriétés similaires au prototype utilisé dans la partie I sur substrat \emph{ROGERS}.
+Les dimensions du filtre ont été obtenu par \emph{tunning}. La longueur du tronçon de ligne simple STUB est de \emph{15.52 mm}. ???
+~\\\\Le layout~\underline{\color{blue}\ref{layreso}} du résonateur électrique est le suivant:
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=5cm]{layout_stub.PNG}
+	\caption{\label{layreso} \underline{Layout résonateur électrique}}
+\end{figure}
+~\\\\La figure~\underline{\color{blue}\ref{simu_stub}} suivante illustre les simulations des paramètres S du résonateur effectuées sous \emph{Advanced Design System} avec les options de simulation illustrées en Annexes.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=12cm,height=8cm]{simu_stub.PNG}
+	\caption{\label{simu_stub} \underline{Simulation ADS paramètres S}}
+\end{figure}
+\section{Le design multicouches du boîter}
+~\\La figure~\underline{\color{blue}\ref{multicouches}} suivante illustre une figure explicative des différentes couches ainsi que le fichier de configuration \emph{ADS} des 10 couches finales du boîter.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=5cm]{multicouches.png}
+	\caption{\label{multicouches} \underline{Propriétés substrat LTCC}}
+\end{figure}
+\noindent Le substrat LTCC associé sous le résonateur électrique a une épaisseur de $480*10^{-6}\ m$ pour correspondre au maximum avec le substrat utilisé pour le prototype de la partie I.
+~\\\\Le layout final envoyé pour la conception est illustré sur l'image~\underline{\color{blue}\ref{layoutfinal}} suivante:
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{layout_final.PNG}
+	\caption{\label{layoutfinal} \underline{Layout boîtier}}
+\end{figure}
+
 \setcounter{part}{-3}
 \part{Conclusion}
 
 \setcounter{part}{-4}
 \part{Annexes}
-
+\subsubsection{Options de simulation Advanced Design System du résonateur électrique}
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=10cm]{options_simu_1.PNG}
+	\caption{\label{opt1} \underline{Options Simulation - Frequency Plan}}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=10cm]{options_simu_2.PNG}
+	\caption{\label{opt2} \underline{Options Simulation - Preprocessor}}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=10cm]{options_simu_3.PNG}
+	\caption{\label{opt3} \underline{Options Simulation - Mesh Frequency}}
+\end{figure}
 \setcounter{part}{-5}
 \part{Bibliographie}
 \label{Sources}
