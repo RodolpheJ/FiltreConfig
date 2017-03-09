@@ -166,7 +166,7 @@ DC.
 ~\\
 \noindent Le matériau magnétique YIG doit être positionné sur la surface du filtre émettant le maximum de champs magnétique afin de maximiser le couplage entre le YIG et le résonateur électrique à leurs conditions de résonance respectives.
 ~\\\\Une simulation electromagnétique a été effectuée sous le logiciel \emph{Advanced Design System} ainsi que des mesures sur le champs magnétique rayonné par le filtre en fonction de la fréquence du signal.
-~\\\\La surface maximum en champs magnétique c'est à dire celle ou le couplage entre le YIG et le résonateur électrique sera le plus fort est située à hauteur de $\frac{\lambda}{4}$ (par rapport à la résonance) à la moitié du tronçon de ligne simple STUB de longueur $\frac{\lambda}{2}$ comme illustré sur la figure~\underline{\color{blue}\ref{elec}} suivante:
+~\\\\La surface maximum en champs magnétique c'est à dire celle ou le couplage entre le YIG et le résonateur électrique sera le plus fort est située à hauteur de $\frac{\lambda}{4}$ (par rapport à la résonance) du circuit ouvert, à la moitié du tronçon de ligne simple STUB de longueur $\frac{\lambda}{2}$ comme illustré sur la figure~\underline{\color{blue}\ref{elec}} suivante:
 
 \begin{figure}[H]
 	\centering
@@ -202,12 +202,11 @@ Le résonateur électrique utilisé pour les mesures est le résonateur à simpl
 \begin{figure}[H]
 	\centering
 	\itshape
-	\includegraphics[width=15cm,height=7cm]{f02.png}
-	\caption{\label{fo} \underline{Résonance électrique}}
+	\includegraphics[width=15cm,height=7cm]{avecsans.png}
+	\caption{\label{fo} \underline{Résonance électrique avec et sans l'association YIG/Pt}}
 \end{figure}
-\noindent\footnotesize  \textbf{Figure~\underline{\color{blue}\ref{fo}} | Droite: avec YIG/Pt, }le paramètre $ fo\simeq4.736\ GHz$ correspond à la fréquence à laquelle le filtre coupe-bande à simple STUB ne laisse plus passer le signal. \textbf{Gauche: sans YIG/Pt, }il y a un décalage de la résonance d'environ 200 MHz vers les fréquences plus faibles.
-~\\\\
-\normalsize Afin d'étudier la reproductibilité du dispositif et de déterminer une incertitude sur la valeur du paramètre de résonance \emph{f0}, plusieurs mesures du paramètres \emph{S21} du filtre avec l'association YIG/Pt ont été effectuées après avoir réinstallé plusieurs fois le dispositif entre les bobines. 
+\noindent Il n'y quasiemment aucune différences sur les paramètres S du filtre avce ou sans l'association YIG/Pt.
+~\\\\Afin d'étudier la reproductibilité du dispositif et de déterminer une incertitude sur la valeur du paramètre de résonance \emph{f0}, plusieurs mesures du paramètres \emph{S21} du filtre avec l'association YIG/Pt ont été effectuées après avoir réinstallé plusieurs fois le dispositif entre les bobines. 
 ~\\La figure~\underline{\color{blue}\ref{foreprod}} ci-dessous, illustre l'incertitude de mesures sur la résonance électrique du dispositif.
 \begin{figure}[H]
 	\centering
@@ -237,11 +236,11 @@ tion}} en fonction du champs magnétique qui lui est appliqué.
 	\includegraphics[width=15cm,height=5cm]{H.png}
 	\caption{\label{Hres} \underline{Paramètre S21 autour de H = Hres}}
 \end{figure}
-\noindent Lorsqu'un champs magnétique \emph{H} statique est appliqué sur le dispositif \emph{filtre + association YIG/PT}, un phénomène de séparation de la fréquence de résonance \emph{f0} en deux fréquences distinctes \emph{f1} et \emph{f2} apparaît. Ce phénomène de \emph{splitting} est dû au couplage des résonances électrique et magnétique.
+\noindent Lorsqu'un champs magnétique \emph{H} statique est appliqué sur le dispositif \emph{filtre + association YIG/PT}, un phénomène de séparation de la fréquence de résonance \emph{f0} en deux fréquences distinctes \emph{f1} et \emph{f2} apparaît. Ce phénomène d' \emph{hybridation} est dû au couplage des résonances électrique et magnétique.
 La présence d'irrégularités le long des pentes des courbes des pics de résonance est dûe à la résonance des autres modes magnétique présent dans le \emph{YIG} dont le nombre dépend des dimensions de ce dernier\footnote{Seul la résonance du mode fondamental est étudiée dans ce rapport.}. 
 \subsection{Balayage en champs et en fréquences}
 ~\\
-\noindent Afin d'étudier le comportement de ce phénomène de \emph{splitting}, un balayage en champs et en fréquence avec respectivement un pas de \emph{2.9 Oe} et de \emph{210 KHz} a été effectué. Les données stockées par le logiciel \emph{Labview} ont été analysées à l'aide d'un script \emph{matlab}.
+\noindent Afin d'étudier le comportement de ce phénomène d' \emph{hybridation}, un balayage en champs et en fréquence avec respectivement un pas de \emph{2.9 Oe} et de \emph{210 KHz} a été effectué. Les données stockées par le logiciel \emph{Labview} ont été analysées à l'aide d'un script \emph{matlab}.
 ~\\\\La figure~\underline{\color{blue}\ref{matH}} ci-dessous représente la dépendance en champs et en fréquence du paramètre de transmission \emph{S21}. Le paramètre S21 est ici représenté par un code couleur. Il varie du rouge foncé pour 0 dB au bleu foncé pour -12 dB (c'est à dire lorsque le signal ne passe plus). Les conditions de résonance maximum du filtre correspondent aux coordonnées des zones du graphe ou la couleur est proche du bleu foncé.
 \begin{figure}[H]
 	\centering
@@ -249,7 +248,7 @@ La présence d'irrégularités le long des pentes des courbes des pics de réson
 	\includegraphics[width=13cm,height=8cm]{matH.png}
 	\caption{\label{matH} \underline{Paramètre S21 - Balayage en champs magnétique et en fréquences}}
 \end{figure}
-\noindent\footnotesize\textbf{Figure~\underline{\color{blue}\ref{matH}} | Balayage en champs et en fréquences. Courbes roses}, les courbes des minimums locaux du paramètre de transmission \emph{S21} aux alentours des fréquences \emph{f1} et \emph{f2} auxquelles se superposent les courbes de \emph{f1} et \emph{f2} du molède de couplage harmonique pour une valeur de coefficient de couplage $k\ \text{=}\ 0.1504$ et d'aimentation du YIG à saturation $Ms\ \text{=}\ 1750\ A.m^{-1}$. \textbf{Segment AB}, la valeur du \emph{gap} de fréquences pour une valeur de champs injecté dans le platine $H\ \text{=}\ Hres\ \text{=}\ 995.92\ 0e$. \textbf{Courbe noire horizontale}, la fréquence de résonance \emph{f0} du filtre à champs nul.
+\noindent\footnotesize\textbf{Figure~\underline{\color{blue}\ref{matH}} | Balayage en champs et en fréquences. Courbes roses}, les courbes des minimums locaux du paramètre de transmission \emph{S21} aux alentours des fréquences \emph{f1} et \emph{f2} auxquelles se superposent les courbes de \emph{f1} et \emph{f2} du molède de couplage harmonique pour une valeur de coefficient de couplage $k\ \text{=}\ 0.1504$ et d'aimantation du YIG à saturation $Ms\ \text{=}\ 1750\ A.m^{-1}$. \textbf{Segment AB}, la valeur du \emph{gap} de fréquences pour une valeur de champs injecté dans le platine $H\ \text{=}\ Hres\ \text{=}\ 995.92\ 0e$. \textbf{Courbe noire horizontale}, la fréquence de résonance \emph{f0} du filtre à champs nul.
 ~\\\\
 \normalsize
 ~\\La position en fréquence des résonances \emph{f1} et \emph{f2} varie en fonction de la valeur du champs magnétique injecté dans le YIG. On observe ainsi l'apparition d'une bande de résonance interdite.
@@ -262,7 +261,7 @@ $$\underset{2}{f}\ \text{=}\ \frac{1}{2}*(\underset{0}{f}\text{+}\underset{r}{f}
 avec dans le cas du YIG,
 $$\underset{r}{f}\ \text{=}\ \frac{1.8*10^7}{2*\pi}*\sqrt{|H*(H\text{+}\underset{s}{M})|}$$
 et,
-$$k\ \text{=}\ \sqrt{\frac{\underset{gap}{f}}{\underset{0}{f}}}\ ,\ \ \underset{gap}{f}\ \text{=}\ \underset{2}{f}-\underset{1}{f}\ \text{\emph{à H=Hres,}}\ \ \underset{s}{M}\equiv\text{\emph{Aimentation du YIG à saturation.}}$$
+$$k\ \text{=}\ \sqrt{\frac{\underset{gap}{f}}{\underset{0}{f}}}\ ,\ \ \underset{gap}{f}\ \text{=}\ \underset{2}{f}-\underset{1}{f}\ \text{\emph{à H=Hres,}}\ \ \underset{s}{M}\equiv\text{\emph{Aimantation du YIG à saturation.}}$$
 ~\\En jouant sur la valeur du paramètre \emph{k}, associé aux pertes magnétiques dans le YIG, et celle de \emph{Ms}, les courbes représentatives des formules du modèle de couplage harmonique
 de \emph{f1} et \emph{f2} se superposent parfaitement avec celle des positions des minimums de \emph{S21}, c'est à dire les points où se situe la résonance. Les courbes se superposent lorsque $k\text{=}0.1504$ et $Ms\text{=}1750 A.m^{-1}$.
 ~\\Les courbes de \emph{f1} et \emph{f2} avec les valeurs de \emph{k} et \emph{Ms} ainsi trouvées sont représentées en rose sur la figure~\underline{\color{blue}\ref{matH}}.
@@ -292,6 +291,29 @@ De plus, la position du point d'abscisse \emph{Hres} correspond à un \emph{gap}
 \noindent Pour une valeur de champs appliqué \emph{H=Hres}, il y a donc bien une hybridation de la résonance \emph{f0} du mode fondamentale en deux résonances distinctes, \emph{f1} et \emph{f2}. Cette hybridation résulte du couplage entre les résonances électrique du filtre à simple STUB et magnétique du YIG.
 ~\\\\ Le positionnement de la résonance de plus haute fréquence \emph{f2} est précis à quelques MHz (<10). En revanche, celui de la résonance \emph{f1} est précis à environ 20 Mhz. L'incertitude sur le résultat de la position de la résonance \emph{f1} est donc plus grande commme on peut le constater sur l'allure du paramètre S21 au niveau de la résonance \emph{f1} à \emph{H=Hres}.
 ~\\\\ A \emph{H=Hres}, la valeur du paramètre de transmission \emph{S21} à la résonance \emph{f1} se rapproche le plus de celle à la résonance \emph{f2}. Lorsque la valeur du champs magnétique appliqué s'éloigne de \emph{Hres}, la valeur de \emph{S21} aux alentours de la résonance \emph{f1} se détériore.
+\chapter{Etude de la détection de la tension DC en bout de chaîne}
+Ce chapitre traite de l'étude de la détection de la tension DC en bout de chaîne à la condition de résonance du YIG pour une valeur de champs magnétique \emph{H=Hres} ainsi que de l'influence du courant injecté dans le platine sur la tension DC récupérée en bout de chaîne.
+~\\\\ Les mesures en tension sont effecutées aux bornes du platine en augmentant progressivement la fréquence de 4.4 GHz à 5.1 GHz avec une précision de 5000 points de mesures. Les mesures sont ensuite récupérées dans un fichier à l'aide du logiciel \emph{Labview}.
+\section{Mesures d'une tension DC}
+~\\\noindent La figure~\underline{\color{blue}\ref{dch}} illustre la tension DC en bout de chaîne aux champs magnétique \emph{H=+Hres}, \emph{H=-Hres} et \emph{H= 0 Oe}.
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{dch.png}
+	\caption{\label{dch} \underline{Tension DC en bout de chaîne}}
+\end{figure}
+\section{Interprétation des résultats de mesures de la tension DC}
+~\\\noindent A champs nul, la tension DC détectée n'est autre que le bruit généré par l'environnement de mesures à l'air libre et l'application du signal RF dans le filtre.
+~\\\\Pour une valeur de champs positive \emph{H=+Hres}, la tension détectée est négative tandis qu'à \emph{H=-Hres}, la tension détectée est positive. Dans ces deux cas, la tension détectée est de l'ordre du micro-volt.
+~\\\\Lors de l'application d'un champs magnétique \emph{H}=$\pm$\emph{Hres}, le pic de tension le plus élevé est situé à la fréquence de résonance magnétique \emph{fr} du YIG comme illustré sur la figure~\underline{\color{blue}\ref{dcfr}}:
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=15cm,height=6cm]{dcfr3.png}
+	\caption{\label{dcfr} \underline{Tension DC et S21 à H=Hres}}
+\end{figure}
+\noindent Les différents pics de tensions apparant, autres que celui centré à la fréquence de résonance \emph{fr} du YIG, sont dûs à la résonance des autres modes que le mode fondamentale dans le YIG. 
+~\\\\L'apparition d'une tension DC en bout de chaîne est dûe à l'apparition d'un courant de spin dans le YIG à sa condition de résonance magnétique \emph{H=Hres}. Ce courant de spin est ensuite converti en courant électrique dans le platine par le biais des phénomènes physiques de \emph{Spin-Pumping} et de \emph{Inverse Spin Hall Effect}\footnote{Letters, \emph{Transmission of electrical signals by spin-wave interconversion in a magnetic insulator}} ayant lieu à l'interface entre le YIG et le platine.
 \chapter{Etude du contrôle des pertes magnétiques dans le YIG}
 Afin d'établir un contrôle sur les pertes magnétiques du YIG et de pouvoir évaluer la configurabilité de la résonance du filtre, un courant est injecté dans le platine. Ce courant injecté va être converti en onde de spin dans le YIG grâce à la combinaison des phénomènes de \emph{Spin Hall Effect} et de \emph{Spin Torque Transfer}\footnote{LETTERS Nature, \emph{Transmission of electrical signals by spin wave.}} et va modifier les propriétés résonantes du filtre.
 \section{Temps de stabilisation des paramètres S du filtre configurable}
@@ -352,32 +374,7 @@ avec $\frac{\underset{eff}{g}}{2*\pi}$ lié au coefficient de couplage \emph{k}.
 	\caption{\label{coeffcoupl} \underline{Coefficient du couplage électrique et magnétique}}
 \end{figure}
 \noindent A partir d'une valeur de courant injecté dans le platine supérieur à environ 25 mA, le coefficient de couplage se dégrade rapidement jusqu'à atteindre une valeur nulle à 50 mA. Les barres d'incertitudes illustre la reproductibilité de la mesure. L'incertitude sur le coefficient de couplage sera d'autant plus élevée aux alentours de 50 mA ainsi qu'aux alentours du \emph{glitch} de mesure entre 25 et 30 mA présent sur les mesures de balayage en courant et en fréquences (voir figure~\underline{\color{blue}\ref{isweep}}).
-
-\chapter{Etude de la détection de la tension DC en bout de chaîne}
-Ce chapitre traite de l'étude de la détection de la tension DC en bout de chaîne à la condition de résonance du YIG pour une valeur de champs magnétique \emph{H=Hres} ainsi que de l'influence du courant injecté dans le platine sur la tension DC récupérée en bout de chaîne.
-~\\\\ Les mesures en tension sont effecutées aux bornes du platine en augmentant progressivement la fréquence de 4.4 GHz à 5.1 GHz avec une précision de 5000 points de mesures. Les mesures sont ensuite récupérées dans un fichier à l'aide du logiciel \emph{Labview}.
-\section{Mesures d'une tension DC}
-~\\\noindent La figure~\underline{\color{blue}\ref{dch}} illustre la tension DC en bout de chaîne aux champs magnétique \emph{H=+Hres}, \emph{H=-Hres} et \emph{H= 0 Oe}.
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=10cm,height=7cm]{dch.png}
-	\caption{\label{dch} \underline{Tension DC en bout de chaîne}}
-\end{figure}
-\section{Interprétation des résultats de mesures de la tension DC}
-~\\\noindent A champs nul, la tension DC détectée n'est autre que le bruit généré par l'environnement de mesures à l'air libre et l'application du signal RF dans le filtre.
-~\\\\Pour une valeur de champs positive \emph{H=+Hres}, la tension détectée est négative tandis qu'à \emph{H=-Hres}, la tension détectée est positive. Dans ces deux cas, la tension détectée est de l'ordre du micro-volt.
-~\\\\Lors de l'application d'un champs magnétique \emph{H}=$\pm$\emph{Hres}, le pic de tension le plus élevé est situé à la fréquence de résonance magnétique \emph{fr} du YIG comme illustré sur la figure~\underline{\color{blue}\ref{dcfr}}:
-\begin{figure}[H]
-	\centering
-	\itshape
-	\includegraphics[width=15cm,height=6cm]{dcfr3.png}
-	\caption{\label{dcfr} \underline{Tension DC et S21 à H=Hres}}
-\end{figure}
-\noindent Les différents pics de tensions apparant, autres que celui centré à la fréquence de résonance \emph{fr} du YIG, sont dûs à la résonance des autres modes que le mode fondamentale dans le YIG. 
-~\\\\L'apparition d'une tension DC en bout de chaîne est dûe à l'apparition d'un courant de spin dans le YIG à sa condition de résonance magnétique \emph{H=Hres}. Ce courant de spin est ensuite converti en courant électrique dans le platine par le biais des phénomènes physiques de \emph{Spin-Pumping} et de \emph{Inverse Spin Hall Effect}\footnote{Letters, \emph{Transmission of electrical signals by spin-wave interconversion in a magnetic insulator}} ayant lieu à l'interface entre le YIG et le platine.
-\chapter{Influence du courant injecté dans le platine}
-Des mesures ont été effectuées pour déterminer la réponse en tension lors de l'injection d'un courant dans le platine et pour essayer de comprendre le phénomène physique responsable du décalage de la fréquence de résonance \emph{f1} s'effectuant toujours dans le même sens peu importe le sens du courant injecté. 
+~\\\\Des mesures ont été effectuées pour déterminer la réponse en tension lors de l'injection d'un courant dans le platine et pour essayer de comprendre le phénomène physique responsable du décalage de la fréquence de résonance \emph{f1} s'effectuant toujours dans le même sens peu importe le sens du courant injecté. 
 \section{Courbe d'hystéresis}
 ~\\\noindent La figure~\underline{\color{blue}\ref{hyst}} illustre la tension détectée aux bornes du platine lors de l'injection d'un courant dans ce dernier. Les mesures ont été effectuées de \emph{-50 mA} à {+50 mA} et inversement pour obtenir le cycle d'hystéresis total avec une mesure tous les \emph{5 mA}.
 \begin{figure}[H]
@@ -425,14 +422,14 @@ La non-linéarité se retrouve également sur la figure ci-dessus.
 \noindent La contribution en champs magnétique lors de l'injection d'un courant dans un élément de platine d'épaisseur \emph{6nm}, est de \emph{0.32 Oe} pour la composante \emph{Hx} et de \emph{1.2 Oe} au maximum pour la composante \emph{Hy} à l'interface du platine.
 ~\\\\Ceci permet de montrer que la contribution en champs magnétique de l'injection d'un courant dans le platine n'est pas le phénomène physique responsable de la variation du champs magnétique car cette contribution est minimale. Ceci permet d'éliminer l'hypothèse que selon la valeur et le sens du courant injecté dans le platine, la fréquence de résonance \emph{f1} se décale vers la droite ou vers la gauche car dans les faits, cette dernière se décale toujours vers les fréquences plus faibles peu importe le sens du courant.
 De plus, comme cela a été vu dans la partie~\underline{\color{blue}3.2}, pour une valeur injecté de \emph{18 mA} à \emph{H=Hres=990 Oe}, la correspondance se situe pour une valeur de champs de \emph{H=970 Oe} à \emph{I=O mA}. Le courant injecté dans le platine entraîne donc une différence de \emph{20 Oe} dans ce cas de figure ce qui est bien supérieur à la contribution maximale du champs magnétique généré par l'injection d'un courant dans le platine.
-~\\\\Afin de déterminer les causes d'une telle variation sur le champs magnétique total lors de l'injection d'un courant dans le platine, plusieurs autres hypothèses restent à étudier pour comprend parfaitement le phénomène telles que la variation du gradient de température dans le YIG lors de l'injection d'un courant dans le platine et la variation des paramètres caractéristiques (aimentation à saturation, etc.) du YIG induite par ce courant. Ces hypothèses n'ont pas eu le temps d'être vérifiées au cours de ce projet de 6 mois mais peuvent constituer une piste de recherche sèrieuse pour la compréhension
-du phénomène de \emph{splitting} des résonances dans son ensemble.
+~\\\\Afin de déterminer les causes d'une telle variation sur le champs magnétique total lors de l'injection d'un courant dans le platine, plusieurs autres hypothèses restent à étudier pour comprend parfaitement le phénomène telles que la variation du gradient de température dans le YIG lors de l'injection d'un courant dans le platine et la variation des paramètres caractéristiques (aimantation à saturation, etc.) du YIG induite par ce courant. Ces hypothèses n'ont pas eu le temps d'être vérifiées au cours de ce projet de 6 mois mais peuvent constituer une piste de recherche sèrieuse pour la compréhension
+du phénomène d'hybridation des résonances dans son ensemble.
 
 \setcounter{chapter}{1}
 \setcounter{section}{0}
 \part{Conception d'un boîtier sous ADS}
 Le but de cette partie du projet est la conception d’un boîtier sous le logiciel \emph{Advanced Design System} permettant d’obtenir une structure fiable et solide qui servira à contenir au sein d’une cavité le matériau magnétique (YIG) sur lequel sera déposé une fine couche de platine par pulvérisation cathodique.
-~\\\\Il s'agira donc de réadapter le design utilisé pour la conception du résonateur électrique à simple STUB, sur un substrat \emph{ROGERS} de permitivité 4.15, pour concevoir le design d'un circuit multicouches intégrant le résonateur électrique à simple STUB, la cavité pour contenir le YIG et les \emph{pads} de connexions pour contrôler et mesurer le comportement du filtre.
+~\\\\Il s'agira donc de réadapter le design utilisé pour la conception du résonateur électrique à simple STUB (sur un substrat \emph{ROGERS} de permitivité 3) pour concevoir le design d'un circuit multicouches intégrant le résonateur électrique à simple STUB, la cavité pour contenir le YIG et les \emph{pads} de connexions pour contrôler et mesurer le comportement du filtre.
 \section{Le substrat utilisé pour la conception}
 ~\\\noindent
 Le substrat utilisé est un substrat \emph{LTCC} dont les propriétés sont illustrées sur la figure~\underline{\color{blue}\ref{substrat}} suivante:
@@ -442,10 +439,10 @@ Le substrat utilisé est un substrat \emph{LTCC} dont les propriétés sont illu
 	\includegraphics[width=15cm,height=5cm]{material_substrat.PNG}
 	\caption{\label{substrat} \underline{Propriétés substrat LTCC}}
 \end{figure}
-\noindent La permitivité du substrat est de 4.5 et les pertes magnétiques sont de $18*10^{-3}$ et son épaisseur est de  $500*10^{-6}\ m$. Plus la permitivité est grande et plus ???.
+\noindent La permitivité du substrat est de 4.5 et les pertes magnétiques sont de $18*10^{-3}$ et son épaisseur est de  $500*10^{-6}\ m$. Plus la permitivité est grande et plus la largeur du tronçon de ligne simple STUB se terminant par un C.O sera faible. Il y a un donc un gain de place par rapport au filtre conçu sur substrat \emph{ROGERS}.
 \section{Le résonateur électrique à simple STUB}
 ~\\\noindent Il s'agit d'adapter les dimensions du filtre et notemment de la ligne simple STUB pour que le filtre possède des propriétés similaires au prototype utilisé dans la partie I sur substrat \emph{ROGERS}.
-Les dimensions du filtre ont été obtenu par \emph{tunning}. La longueur du tronçon de ligne simple STUB est de \emph{15.52 mm}. ???
+Les dimensions du filtre ont été obtenu par \emph{tunning}. La longueur du tronçon de ligne simple STUB est de \emph{15.52 mm}.
 ~\\\\Le layout~\underline{\color{blue}\ref{layreso}} du résonateur électrique est le suivant:
 \begin{figure}[H]
 	\centering
@@ -479,6 +476,19 @@ Les dimensions du filtre ont été obtenu par \emph{tunning}. La longueur du tro
 
 \setcounter{part}{-3}
 \part{Conclusion}
+Le prototype de filtre configurable conçu pour effectuer les mesures fonctionne. Jusqu'alors, des études sur le couplage des résonances entre un résonateur électrique et le matériau magnétique YIG avaient été réalisées mais seulement au sein d'une cavité résonante. Grâce à ce prototype, il a été possible de montrer l'existence et d'étudier ce type de couplage à l'air libre et à température ambiante.  
+~\\\\Pour l'étude du comportement du couplage de résonance du mode fondamentale, le modèle de couplage harmonique a été validé. Ce modèle a permis d'obtenir les formules analytiques régissant le comportement des résonances \emph{f1} et \emph{f2} lors de l'application d'un champs magnétique statique sur le dispositif.
+~\\\\La détection d'une tension aux bornes du platine lors de l'application d'un champs magnétique sur le dispositif a permis de confirmer l'existence d'une onde de Spin dans le YIG convertie par la suite en courant électrique dans le platine grâce aux phénomènes de \emph{Spin Transfer Torque} et de \emph{Spin Hall Effect} ayant lieu à l'interface entre le YIG et le platine.
+~\\\\L'étude de l'injection d'un courant dans le platine a permis d'établir la configurabilité du filtre ainsi qu'un contrôle sur les pertes magnétiques dans le YIG. Une fois déterminées, les pertes magnétiques permettent de retrouver la valeur du coefficient de couplage entre le résonateur électrique et le matériau magnétique YIG. Cette étude a permis de mettre en évidence les phénomènes physique inverse à ceux de la détection que sont les phénomènes de \emph{Spin Pumping} et d'\emph{Inverse Spin Hall Effect}.
+~\\\\La configurabilité du filtre s'effectue toujours dans le même sens, peu importe le sens du champs magnétique statique appliqué sur le dispositif, ou le sens du courant injecté dans le platine. En procédant par élimination, il a été montré que le champs magnétique créé par la propagation d'un courant dans le platine n'était pas assez puissant pour être la cause du comportement de la configurabilité du filtre. D'autres hypothèses restent à étudier pour expliquer ce phénomène comme la dépendance sur le gradient de température traversant le YIG d'une variation d'un courant injecté dans le platine afin de vérifier si c'est la direction de ce gradient qui influe sur le sens de configurabilité du filtre et la variation des paramètres caractéristiques du YIG lors de l'application d'un tel courant. Ces hypothèses n'ont pas pu être étudiées pendant la durée de ce projet mais constituent néanmoins des pistes solides pour l'explication précise des phénomènes mis en jeu dans le couplage des résonances électrique et magnétique.
+~\\\\Un prototype de boîtier a été réalisé sous \emph{Advanced Design System} afin d'obtenir une structure fiable et solide et de pouvoir effectuer des mesures en courant ou en tension sur le platine.
+~\\\\Enfin, les résultats trouvés pendant ce projet ont contribués à la rédaction d'un article scientifique sur le sujet. L'entête de l'article est illustrée sur l'image~\underline{\color{blue}\ref{articlefin}} ci-dessous. 
+\begin{figure}[H]
+	\centering
+	\itshape
+	\includegraphics[width=10cm,height=7cm]{articlefin.png}
+	\caption{\label{articlefin} \underline{Article Scientifique}}
+\end{figure}
 
 \setcounter{part}{-4}
 \part{Annexes}
@@ -486,7 +496,7 @@ Les dimensions du filtre ont été obtenu par \emph{tunning}. La longueur du tro
 \begin{figure}[H]
 	\centering
 	\itshape
-	\includegraphics[width=15cm,height=10cm]{options_simu_1.PNG}
+	\includegraphics[width=15cm,height=8cm]{options_simu_1.PNG}
 	\caption{\label{opt1} \underline{Options Simulation - Frequency Plan}}
 \end{figure}
 \begin{figure}[H]
